@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Redwood Logistics & Transport Services</title>
+<meta name="description" content="Redwood Logistics & Transport Services — Same-day courier, nationwide delivery, international freight to Ghana, vehicle rental and security escort in Lagos. Call 08188381024.">
+<meta name="keywords" content="logistics Lagos, same day delivery Lagos, courier Lagos, nationwide delivery Nigeria, international freight Ghana, vehicle hire Lagos, Redwood Logistics">
+<meta name="author" content="Redwood Logistics & Transport Services">
+<meta property="og:title" content="Redwood Logistics & Transport Services">
+<meta property="og:description" content="Premium logistics & transport across Lagos, nationwide Nigeria, and internationally. Book in 2 minutes via WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_NG">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Redwood Logistics & Transport Services">
+<meta name="twitter:description" content="Same-day courier, nationwide delivery, international freight & vehicle hire in Lagos.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -391,6 +401,39 @@ function closeModal() {
 function closeModalOutside(e) {
   if (e.target === document.getElementById('serviceModal')) closeModal();
 }
+
+// Count-up animation on scroll
+(function() {
+  function animateCount(el) {
+    var target = parseFloat(el.getAttribute('data-count'));
+    var suffix = el.getAttribute('data-suffix') || '';
+    var isDecimal = target % 1 !== 0;
+    var duration = 1800;
+    var start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var ease = 1 - Math.pow(1 - progress, 3);
+      var val = target * ease;
+      el.textContent = (isDecimal ? val.toFixed(1) : Math.floor(val)) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = (isDecimal ? target.toFixed(1) : target) + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+  var counters = document.querySelectorAll('[data-count]');
+  if (!counters.length) return;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting && !e.target.dataset.done) {
+        e.target.dataset.done = '1';
+        animateCount(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(function(c) { observer.observe(c); });
+})();
+
 </script>
 
 
@@ -429,9 +472,9 @@ function closeModalOutside(e) {
         <button class="btn-outline" onclick="openModal('escort')" style="font-size:13px;padding:11px 18px;">🛡️ Security Escort</button>
       </div>
       <div class="hero-stats">
-        <div><div class="stat-num">500+</div><div class="stat-lbl">Daily Deliveries</div></div>
-        <div><div class="stat-num">99.9%</div><div class="stat-lbl">Safe Delivery Rate</div></div>
-        <div><div class="stat-num">100%</div><div class="stat-lbl">Same-Day Service</div></div>
+        <div><div class="stat-num" data-count="500" data-suffix="+">500+</div><div class="stat-lbl">Daily Deliveries</div></div>
+        <div><div class="stat-num" data-count="99.9" data-suffix="%">99.9%</div><div class="stat-lbl">Safe Delivery Rate</div></div>
+        <div><div class="stat-num" data-count="100" data-suffix="%">100%</div><div class="stat-lbl">Same-Day Service</div></div>
       </div>
     </div>
     <div class="hero-img-stack">
@@ -611,10 +654,10 @@ function closeModalOutside(e) {
         </div>
       </div>
       <div class="about-visual">
-        <div class="about-stat"><div class="about-stat-num">500+</div><div class="about-stat-lbl">Deliveries Per Day</div></div>
-        <div class="about-stat"><div class="about-stat-num">99.9%</div><div class="about-stat-lbl">Safe Delivery Rate</div></div>
-        <div class="about-stat"><div class="about-stat-num">6+</div><div class="about-stat-lbl">Fleet Vehicles</div></div>
-        <div class="about-stat"><div class="about-stat-num">36</div><div class="about-stat-lbl">States Covered</div></div>
+        <div class="about-stat"><div class="about-stat-num" data-count="500" data-suffix="+">500+</div><div class="about-stat-lbl">Deliveries Per Day</div></div>
+        <div class="about-stat"><div class="about-stat-num" data-count="99.9" data-suffix="%">99.9%</div><div class="about-stat-lbl">Safe Delivery Rate</div></div>
+        <div class="about-stat"><div class="about-stat-num" data-count="6" data-suffix="+">6+</div><div class="about-stat-lbl">Fleet Vehicles</div></div>
+        <div class="about-stat"><div class="about-stat-num" data-count="36" data-suffix="">36</div><div class="about-stat-lbl">States Covered</div></div>
         <div class="about-stat"><div class="about-stat-num">Mon–Sat</div><div class="about-stat-lbl">8:00 AM – 6:00 PM</div></div>
       </div>
     </div>
