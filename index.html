@@ -2040,6 +2040,14 @@ function submitEscort() {
   window.open(`https://wa.me/2348188381024?text=${msg}`, '_blank');
   closeModal();
 }
+
+// FAQ toggle
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(i){ i.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
+}
 </script>
 
 </body>
