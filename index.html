@@ -361,6 +361,18 @@ footer { background:#0D0603; color:rgba(255,255,255,0.6); padding:60px 5% 32px; 
   .recipient-fields { grid-template-columns:1fr; }
   .rf-full { grid-column:span 1; }
 }
+
+/* Custom price-check dropdowns */
+.pc-dropdown { position:relative; margin-bottom:12px; }
+.pc-dropdown-btn { width:100%; padding:11px 36px 11px 14px; border:1px solid rgba(255,255,255,0.25); border-radius:8px; font-size:13px; background:#1a1a2e; color:white; font-family:'DM Sans',sans-serif; cursor:pointer; text-align:left; white-space:normal; word-break:break-word; line-height:1.4; position:relative; }
+.pc-dropdown-btn::after { content:'▾'; position:absolute; right:12px; top:50%; transform:translateY(-50%); font-size:14px; color:rgba(255,255,255,0.6); }
+.pc-dropdown-list { display:none; position:absolute; top:calc(100% + 4px); left:0; right:0; background:#1a1a2e; border:1px solid rgba(255,255,255,0.2); border-radius:8px; max-height:260px; overflow-y:auto; z-index:9999; box-shadow:0 8px 24px rgba(0,0,0,0.4); }
+.pc-dropdown-list.open { display:block; }
+.pc-dropdown-item { padding:10px 14px; font-size:12px; color:white; cursor:pointer; line-height:1.5; border-bottom:1px solid rgba(255,255,255,0.06); }
+.pc-dropdown-item:last-child { border-bottom:none; }
+.pc-dropdown-item:hover, .pc-dropdown-item.selected { background:rgba(196,82,10,0.3); color:var(--gold); }
+.pc-dropdown-item.placeholder { color:rgba(255,255,255,0.4); }
+
 </style>
 </head>
 <body>
@@ -511,42 +523,50 @@ function closeModalOutside(e) {
         <div class="price-checker" id="contact">
           <div class="pc-title">Quick Price Check</div>
           <div class="pc-sub">Lagos intracity — select areas for an instant rate.</div>
-          <select class="pc-sel" id="pricePickup" onchange="calcPrice()" oninput="calcPrice()">
-            <option value="">— Pickup area —</option>
-            <option value="1">Area 1 — Alausa, Allen, Ikeja, Yaba, Surulere...</option>
-            <option value="2">Area 2 — V.I, Ikoyi, Lekki Phase 1, Banana Island...</option>
-            <option value="3">Area 3 — Ajah, Badore, Sangotedo...</option>
-            <option value="4">Area 4 — Chevron, VGC, Osapa, Lekki County...</option>
-            <option value="5">Area 5 — Abijo, Awoyaya, Eputu, Lakowe...</option>
-            <option value="6">Area 6 — Marina, Lagos Island, Balogun, Obalende...</option>
-            <option value="7">Area 7 — Ago Palace, Okota, Cele, Isolo...</option>
-            <option value="8">Area 8 — Apapa, Festac, Mile 2, Trade Fair...</option>
-            <option value="9">Area 9 — Ogudu, Magodo, Ikosi, Tollgate...</option>
-            <option value="10">Area 10 — Agege, Egbeda, Iyana-Ipaja...</option>
-            <option value="11">Area 11 — Alimosho, Ikotun, Igando, Ipaja...</option>
-            <option value="12">Area 12 — OPIC, Berger, Ojodu...</option>
-            <option value="13">Area 13 — Oshodi, Gbagada, Pedro...</option>
-            <option value="14">Area 14 — Ojota, Ketu, Mile 12...</option>
-            <option value="special">Specials — Badagry, Ikorodu, Epe, Agbara...</option>
-          </select>
-          <select class="pc-sel" id="priceDelivery" onchange="calcPrice()" oninput="calcPrice()">
-            <option value="">— Delivery area —</option>
-            <option value="1">Area 1 — Alausa, Allen, Ikeja, Yaba, Surulere...</option>
-            <option value="2">Area 2 — V.I, Ikoyi, Lekki Phase 1, Banana Island...</option>
-            <option value="3">Area 3 — Ajah, Badore, Sangotedo...</option>
-            <option value="4">Area 4 — Chevron, VGC, Osapa, Lekki County...</option>
-            <option value="5">Area 5 — Abijo, Awoyaya, Eputu, Lakowe...</option>
-            <option value="6">Area 6 — Marina, Lagos Island, Balogun, Obalende...</option>
-            <option value="7">Area 7 — Ago Palace, Okota, Cele, Isolo...</option>
-            <option value="8">Area 8 — Apapa, Festac, Mile 2, Trade Fair...</option>
-            <option value="9">Area 9 — Ogudu, Magodo, Ikosi, Tollgate...</option>
-            <option value="10">Area 10 — Agege, Egbeda, Iyana-Ipaja...</option>
-            <option value="11">Area 11 — Alimosho, Ikotun, Igando, Ipaja...</option>
-            <option value="12">Area 12 — OPIC, Berger, Ojodu...</option>
-            <option value="13">Area 13 — Oshodi, Gbagada, Pedro...</option>
-            <option value="14">Area 14 — Ojota, Ketu, Mile 12...</option>
-            <option value="special">Specials — Badagry, Ikorodu, Epe, Agbara...</option>
-          </select>
+          <div class="pc-dropdown" id="pricePickup-wrap">
+            <button type="button" class="pc-dropdown-btn" id="pricePickup-btn" onclick="togglePcDropdown('pricePickup')">— Pickup area —</button>
+            <input type="hidden" id="pricePickup" value="">
+            <div class="pc-dropdown-list" id="pricePickup-list">
+              <div class="pc-dropdown-item placeholder" data-value="" onclick="selectPcOption('pricePickup','','— Pickup area —')">— Pickup area —</div>
+<div class="pc-dropdown-item" data-value="1" onclick="selectPcOption('pricePickup','1','Area 1 — Alausa, Allen, Agidingbi, Ikeja, Ikeja GRA, Yaba, Surulere, Mushin, Bariga, Shomolu, Maryland, Ilupeju')">Area 1 — Alausa, Allen, Agidingbi, Ikeja, Ikeja GRA, Yaba, Surulere, Mushin, Bariga, Shomolu, Maryland, Ilupeju</div>
+<div class="pc-dropdown-item" data-value="2" onclick="selectPcOption('pricePickup','2','Area 2 — Victoria Island, Ikoyi, Osborne, Falomo, Bourdillon, Banana Island, Lekki Phase 1, Ahmadu Bello Way')">Area 2 — Victoria Island, Ikoyi, Osborne, Falomo, Bourdillon, Banana Island, Lekki Phase 1, Ahmadu Bello Way</div>
+<div class="pc-dropdown-item" data-value="3" onclick="selectPcOption('pricePickup','3','Area 3 — Ajah, Badore, Sangotedo, Ogombo, Abraham Adesanya, Thomas Estate')">Area 3 — Ajah, Badore, Sangotedo, Ogombo, Abraham Adesanya, Thomas Estate</div>
+<div class="pc-dropdown-item" data-value="4" onclick="selectPcOption('pricePickup','4','Area 4 — Chevron, VGC, Osapa, Lekki County, Oral Estate, Idado, Agungi, Ikota')">Area 4 — Chevron, VGC, Osapa, Lekki County, Oral Estate, Idado, Agungi, Ikota</div>
+<div class="pc-dropdown-item" data-value="5" onclick="selectPcOption('pricePickup','5','Area 5 — Abijo, Awoyaya, Eputu, Lakowe, Ibeju-Lekki, Shapati, Bogije')">Area 5 — Abijo, Awoyaya, Eputu, Lakowe, Ibeju-Lekki, Shapati, Bogije</div>
+<div class="pc-dropdown-item" data-value="6" onclick="selectPcOption('pricePickup','6','Area 6 — Marina, Lagos Island, Balogun, Obalende, CMS, Broad Street, Idumota')">Area 6 — Marina, Lagos Island, Balogun, Obalende, CMS, Broad Street, Idumota</div>
+<div class="pc-dropdown-item" data-value="7" onclick="selectPcOption('pricePickup','7','Area 7 — Ago Palace Way, Okota, Cele, Isolo, Ilasamaja, Coker, Amuwo-Odofin')">Area 7 — Ago Palace Way, Okota, Cele, Isolo, Ilasamaja, Coker, Amuwo-Odofin</div>
+<div class="pc-dropdown-item" data-value="8" onclick="selectPcOption('pricePickup','8','Area 8 — Apapa, Festac Town, Mile 2, Trade Fair, Orile, Satellite Town')">Area 8 — Apapa, Festac Town, Mile 2, Trade Fair, Orile, Satellite Town</div>
+<div class="pc-dropdown-item" data-value="9" onclick="selectPcOption('pricePickup','9','Area 9 — Ogudu, Magodo, Ikosi, Tollgate, Alapere, Kosofe, Ojota (GRA)')">Area 9 — Ogudu, Magodo, Ikosi, Tollgate, Alapere, Kosofe, Ojota (GRA)</div>
+<div class="pc-dropdown-item" data-value="10" onclick="selectPcOption('pricePickup','10','Area 10 — Agege, Egbeda, Iyana-Ipaja, Dopemu, Abule-Egba, Meiran, Oke-Odo')">Area 10 — Agege, Egbeda, Iyana-Ipaja, Dopemu, Abule-Egba, Meiran, Oke-Odo</div>
+<div class="pc-dropdown-item" data-value="11" onclick="selectPcOption('pricePickup','11','Area 11 — Alimosho, Ikotun, Igando, Ipaja, Ayobo, Isheri-Olofin, Idimu')">Area 11 — Alimosho, Ikotun, Igando, Ipaja, Ayobo, Isheri-Olofin, Idimu</div>
+<div class="pc-dropdown-item" data-value="12" onclick="selectPcOption('pricePickup','12','Area 12 — OPIC, Berger, Ojodu, Omole, Isheri North, Wempco Road, Magboro')">Area 12 — OPIC, Berger, Ojodu, Omole, Isheri North, Wempco Road, Magboro</div>
+<div class="pc-dropdown-item" data-value="13" onclick="selectPcOption('pricePickup','13','Area 13 — Oshodi, Gbagada, Pedro, Anthony Village, Palmgroove, Ifako')">Area 13 — Oshodi, Gbagada, Pedro, Anthony Village, Palmgroove, Ifako</div>
+<div class="pc-dropdown-item" data-value="14" onclick="selectPcOption('pricePickup','14','Area 14 — Ojota, Ketu, Mile 12, Owode-Onirin, Alapere, Lagos-Ibadan Expressway')">Area 14 — Ojota, Ketu, Mile 12, Owode-Onirin, Alapere, Lagos-Ibadan Expressway</div>
+<div class="pc-dropdown-item" data-value="special" onclick="selectPcOption('pricePickup','special','Specials — Badagry, Ikorodu, Epe, Agbara, Mowe (call for quote)')">Specials — Badagry, Ikorodu, Epe, Agbara, Mowe (call for quote)</div>
+            </div>
+          </div>
+          <div class="pc-dropdown" id="priceDelivery-wrap">
+            <button type="button" class="pc-dropdown-btn" id="priceDelivery-btn" onclick="togglePcDropdown('priceDelivery')">— Delivery area —</button>
+            <input type="hidden" id="priceDelivery" value="">
+            <div class="pc-dropdown-list" id="priceDelivery-list">
+              <div class="pc-dropdown-item placeholder" data-value="" onclick="selectPcOption('priceDelivery','','— Delivery area —')">— Delivery area —</div>
+<div class="pc-dropdown-item" data-value="1" onclick="selectPcOption('priceDelivery','1','Area 1 — Alausa, Allen, Agidingbi, Ikeja, Ikeja GRA, Yaba, Surulere, Mushin, Bariga, Shomolu, Maryland, Ilupeju')">Area 1 — Alausa, Allen, Agidingbi, Ikeja, Ikeja GRA, Yaba, Surulere, Mushin, Bariga, Shomolu, Maryland, Ilupeju</div>
+<div class="pc-dropdown-item" data-value="2" onclick="selectPcOption('priceDelivery','2','Area 2 — Victoria Island, Ikoyi, Osborne, Falomo, Bourdillon, Banana Island, Lekki Phase 1, Ahmadu Bello Way')">Area 2 — Victoria Island, Ikoyi, Osborne, Falomo, Bourdillon, Banana Island, Lekki Phase 1, Ahmadu Bello Way</div>
+<div class="pc-dropdown-item" data-value="3" onclick="selectPcOption('priceDelivery','3','Area 3 — Ajah, Badore, Sangotedo, Ogombo, Abraham Adesanya, Thomas Estate')">Area 3 — Ajah, Badore, Sangotedo, Ogombo, Abraham Adesanya, Thomas Estate</div>
+<div class="pc-dropdown-item" data-value="4" onclick="selectPcOption('priceDelivery','4','Area 4 — Chevron, VGC, Osapa, Lekki County, Oral Estate, Idado, Agungi, Ikota')">Area 4 — Chevron, VGC, Osapa, Lekki County, Oral Estate, Idado, Agungi, Ikota</div>
+<div class="pc-dropdown-item" data-value="5" onclick="selectPcOption('priceDelivery','5','Area 5 — Abijo, Awoyaya, Eputu, Lakowe, Ibeju-Lekki, Shapati, Bogije')">Area 5 — Abijo, Awoyaya, Eputu, Lakowe, Ibeju-Lekki, Shapati, Bogije</div>
+<div class="pc-dropdown-item" data-value="6" onclick="selectPcOption('priceDelivery','6','Area 6 — Marina, Lagos Island, Balogun, Obalende, CMS, Broad Street, Idumota')">Area 6 — Marina, Lagos Island, Balogun, Obalende, CMS, Broad Street, Idumota</div>
+<div class="pc-dropdown-item" data-value="7" onclick="selectPcOption('priceDelivery','7','Area 7 — Ago Palace Way, Okota, Cele, Isolo, Ilasamaja, Coker, Amuwo-Odofin')">Area 7 — Ago Palace Way, Okota, Cele, Isolo, Ilasamaja, Coker, Amuwo-Odofin</div>
+<div class="pc-dropdown-item" data-value="8" onclick="selectPcOption('priceDelivery','8','Area 8 — Apapa, Festac Town, Mile 2, Trade Fair, Orile, Satellite Town')">Area 8 — Apapa, Festac Town, Mile 2, Trade Fair, Orile, Satellite Town</div>
+<div class="pc-dropdown-item" data-value="9" onclick="selectPcOption('priceDelivery','9','Area 9 — Ogudu, Magodo, Ikosi, Tollgate, Alapere, Kosofe, Ojota (GRA)')">Area 9 — Ogudu, Magodo, Ikosi, Tollgate, Alapere, Kosofe, Ojota (GRA)</div>
+<div class="pc-dropdown-item" data-value="10" onclick="selectPcOption('priceDelivery','10','Area 10 — Agege, Egbeda, Iyana-Ipaja, Dopemu, Abule-Egba, Meiran, Oke-Odo')">Area 10 — Agege, Egbeda, Iyana-Ipaja, Dopemu, Abule-Egba, Meiran, Oke-Odo</div>
+<div class="pc-dropdown-item" data-value="11" onclick="selectPcOption('priceDelivery','11','Area 11 — Alimosho, Ikotun, Igando, Ipaja, Ayobo, Isheri-Olofin, Idimu')">Area 11 — Alimosho, Ikotun, Igando, Ipaja, Ayobo, Isheri-Olofin, Idimu</div>
+<div class="pc-dropdown-item" data-value="12" onclick="selectPcOption('priceDelivery','12','Area 12 — OPIC, Berger, Ojodu, Omole, Isheri North, Wempco Road, Magboro')">Area 12 — OPIC, Berger, Ojodu, Omole, Isheri North, Wempco Road, Magboro</div>
+<div class="pc-dropdown-item" data-value="13" onclick="selectPcOption('priceDelivery','13','Area 13 — Oshodi, Gbagada, Pedro, Anthony Village, Palmgroove, Ifako')">Area 13 — Oshodi, Gbagada, Pedro, Anthony Village, Palmgroove, Ifako</div>
+<div class="pc-dropdown-item" data-value="14" onclick="selectPcOption('priceDelivery','14','Area 14 — Ojota, Ketu, Mile 12, Owode-Onirin, Alapere, Lagos-Ibadan Expressway')">Area 14 — Ojota, Ketu, Mile 12, Owode-Onirin, Alapere, Lagos-Ibadan Expressway</div>
+<div class="pc-dropdown-item" data-value="special" onclick="selectPcOption('priceDelivery','special','Specials — Badagry, Ikorodu, Epe, Agbara, Mowe (call for quote)')">Specials — Badagry, Ikorodu, Epe, Agbara, Mowe (call for quote)</div>
+            </div>
+          </div>
           <div class="pc-result" id="pcResult">
             <div style="font-size:11px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Estimated Rate</div>
             <div class="pc-amount" id="pcAmount"></div>
@@ -1099,6 +1119,28 @@ function calcPrice() {
   var noteEl = document.getElementById('pcNote');
   if (amountEl) amountEl.textContent='\u20a6'+rate.toLocaleString();
   if (noteEl) noteEl.textContent=(p===d?'Same area · ':'')+' Up to 2kg · Additional weight extra';
+}
+
+
+function togglePcDropdown(id) {
+  var list = document.getElementById(id+'-list');
+  var allLists = document.querySelectorAll('.pc-dropdown-list');
+  allLists.forEach(function(l){ if(l !== list) l.classList.remove('open'); });
+  list.classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.pc-dropdown')) {
+    document.querySelectorAll('.pc-dropdown-list').forEach(function(l){ l.classList.remove('open'); });
+  }
+});
+function selectPcOption(id, value, label) {
+  document.getElementById(id).value = value;
+  document.getElementById(id+'-btn').textContent = label;
+  document.getElementById(id+'-list').classList.remove('open');
+  document.querySelectorAll('#'+id+'-list .pc-dropdown-item').forEach(function(el){
+    el.classList.toggle('selected', el.dataset.value === value);
+  });
+  calcPrice();
 }
 
 // ── RECIPIENTS ──
