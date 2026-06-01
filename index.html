@@ -505,16 +505,10 @@ function closeModalOutside(e) {
       </div>
     </div>
 
-    <div class="booking-layout" id="dispatch-form">
+    <div class="booking-layout">
       <!-- LEFT: CONTACT + PRICE CHECKER -->
       <div>
-        <div class="cinfo">
-          <div class="cinfo-item"><div class="cinfo-icon">📞</div><div><div class="cinfo-label">Call / WhatsApp</div><div class="cinfo-val">08188381024</div></div></div>
-          <div class="cinfo-item"><div class="cinfo-icon">✉️</div><div><div class="cinfo-label">Email</div><div class="cinfo-val">redwoodlogisticss@gmail.com</div></div></div>
-          <div class="cinfo-item"><div class="cinfo-icon">📍</div><div><div class="cinfo-label">Office</div><div class="cinfo-val">Samuel Manuwa Street, Victoria Island, Lagos</div></div></div>
-          <div class="cinfo-item"><div class="cinfo-icon">🕐</div><div><div class="cinfo-label">Business Hours</div><div class="cinfo-val">Mon–Sat: 8:00 AM – 6:00 PM</div></div></div>
-        </div>
-        <div class="price-checker" style="margin-top:24px;" id="contact">
+        <div class="price-checker" id="contact">
           <div class="pc-title">Quick Price Check</div>
           <div class="pc-sub">Lagos intracity — select areas for an instant rate.</div>
           <select class="pc-sel" id="pricePickup" onchange="calcPrice()" oninput="calcPrice()">
@@ -593,7 +587,7 @@ function closeModalOutside(e) {
 
         <!-- STEP 1: PICKUP + SENDER + RECIPIENTS -->
         <div class="fstep active" id="fs1">
-          <h3>Pickup & Delivery Details</h3>
+          <h3 id="dispatch-form">Pickup & Delivery Details</h3>
           <p class="fstep-desc">Enter sender details on the left and recipient details on the right.</p>
           <div class="two-col">
             <div class="col-section">
