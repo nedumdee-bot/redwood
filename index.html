@@ -614,24 +614,28 @@ function closeModalOutside(e) {
               <div class="col-header">📍 Sender / Pickup Details</div>
               <div class="fg"><label>Sender Name *</label><input type="text" id="senderName" placeholder="Full name of sender"></div>
               <div class="fg"><label>Pickup Area *</label>
-                <select id="pickupArea">
-                  <option value="">— Select pickup area —</option>
-                  <option value="Area 1">Area 1 — Alausa, Allen, Agidingbi, Ikeja GRA, Maryland, Ilupeju, Palmgroove, Shomolu, Jibowu, Yaba, Mushin, Bariga, Surulere</option>
-                  <option value="Area 2">Area 2 — Ahmadu Bello Way, Osborne, Falomo, Ikoyi, Bourdillon, Banana Island, V.I, Lekki Phase 1, Ikate, Elegushi, Igboefon, Elf, JAS 38</option>
-                  <option value="Area 3">Area 3 — Ajah Park, Addo Road, Badore, Lambasa, Owode, Abraham Adesanya, Olokonla, Sangotedo</option>
-                  <option value="Area 4">Area 4 — Jakande, Ologolo, Osapa London, Agungi, New Road/Alpha Beach, Nicon Town, Idado, Lekki County, Chevron, Ikota, VGC</option>
-                  <option value="Area 5">Area 5 — Abijo GRA, Awoyaya, Eputu Town, Lakowe, Bogije, Shapati</option>
-                  <option value="Area 6">Area 6 — Marina, Lagos Island, Balogun, Obalende, CMS, Idumota, Adeniji, Sura, Ebute Ero</option>
-                  <option value="Area 7">Area 7 — 2nd Rainbow, Ago Palace, Okota, Cele, Ajao Estate, Ilasamaja, Ijeshatedo, Aswani, 5 Star, Isolo</option>
-                  <option value="Area 8">Area 8 — Apapa, Mile 2, Alakija, Festac Town, Satellite Town, Trade Fair, Volks, Ojo Barracks</option>
-                  <option value="Area 9">Area 9 — Iyanaoworo, Ifako, Alapere, Ogudu, Tollgate, Ikosi, CMD Road, Magodo Phase 1, Olowora, Magodo Phase 2, Omole Phase 2</option>
-                  <option value="Area 10">Area 10 — Agege/Pen Cinema, Cement, Egbeda, Iyana-Ipaja</option>
-                  <option value="Area 11">Area 11 — Igando, Ikotun, Isheri Osun, LASU, Iyana Iba, Ayobo, Ipaja, Baruwa, Alimosho, Ejigbo</option>
-                  <option value="Area 12">Area 12 — OPIC, Berger, Olowora, Magodo PH 1, Ojodu</option>
-                  <option value="Area 13">Area 13 — Oshodi, Charly Boy, Gbagada, Pedro, Barracks, Charity</option>
-                  <option value="Area 14">Area 14 — Ojota, Maryland, Ketu, Mile 12</option>
-                  <option value="Specials">Specials — Eleko, Epe, Lekki Free Zone, Dangote Refinery, Alaba Int'l, Ajangbadi, Mowe, Ibafo, Redeemed Camp, Badagry, Ijanikin, Agbara, Magboro, Ikorodu, Sango Ota</option>
-                </select>
+                <div class="pc-dropdown" id="pickupArea-wrap">
+                <button type="button" class="pc-dropdown-btn" id="pickupArea-btn" onclick="togglePcDropdown('pickupArea')">— Select pickup area —</button>
+                <input type="hidden" id="pickupArea" name="pickupArea" value="">
+                <div class="pc-dropdown-list" id="pickupArea-list">
+                  <div class="pc-dropdown-item placeholder" data-value="" onclick="selectPcOption('pickupArea','','— Select area —')">— Select area —</div>
+<div class="pc-dropdown-item" data-value="Area 1" onclick="selectPcOption('pickupArea','Area 1','Area 1 — Alausa, Allen, Agidingbi, Ikeja GRA, Maryland, Ilupeju, Palmgroove, Shomolu, Jibowu, Yaba, Mushin, Bariga, Surulere')">Area 1 — Alausa, Allen, Agidingbi, Ikeja GRA, Maryland, Ilupeju, Palmgroove, Shomolu, Jibowu, Yaba, Mushin, Bariga, Surulere</div>
+<div class="pc-dropdown-item" data-value="Area 2" onclick="selectPcOption('pickupArea','Area 2','Area 2 — Ahmadu Bello Way, Osborne, Falomo, Ikoyi, Bourdillon, Banana Island, V.I, Lekki Phase 1, Ikate, Elegushi, Igboefon, Elf, JAS 38')">Area 2 — Ahmadu Bello Way, Osborne, Falomo, Ikoyi, Bourdillon, Banana Island, V.I, Lekki Phase 1, Ikate, Elegushi, Igboefon, Elf, JAS 38</div>
+<div class="pc-dropdown-item" data-value="Area 3" onclick="selectPcOption('pickupArea','Area 3','Area 3 — Ajah Park, Addo Road, Badore, Lambasa, Owode, Abraham Adesanya, Olokonla, Sangotedo')">Area 3 — Ajah Park, Addo Road, Badore, Lambasa, Owode, Abraham Adesanya, Olokonla, Sangotedo</div>
+<div class="pc-dropdown-item" data-value="Area 4" onclick="selectPcOption('pickupArea','Area 4','Area 4 — Jakande, Ologolo, Osapa London, Agungi, New Road/Alpha Beach, Nicon Town, Idado, Lekki County, Chevron, Ikota, VGC')">Area 4 — Jakande, Ologolo, Osapa London, Agungi, New Road/Alpha Beach, Nicon Town, Idado, Lekki County, Chevron, Ikota, VGC</div>
+<div class="pc-dropdown-item" data-value="Area 5" onclick="selectPcOption('pickupArea','Area 5','Area 5 — Abijo GRA, Awoyaya, Eputu Town, Lakowe, Bogije, Shapati')">Area 5 — Abijo GRA, Awoyaya, Eputu Town, Lakowe, Bogije, Shapati</div>
+<div class="pc-dropdown-item" data-value="Area 6" onclick="selectPcOption('pickupArea','Area 6','Area 6 — Marina, Lagos Island, Balogun, Obalende, CMS, Idumota, Adeniji, Sura, Ebute Ero')">Area 6 — Marina, Lagos Island, Balogun, Obalende, CMS, Idumota, Adeniji, Sura, Ebute Ero</div>
+<div class="pc-dropdown-item" data-value="Area 7" onclick="selectPcOption('pickupArea','Area 7','Area 7 — 2nd Rainbow, Ago Palace, Okota, Cele, Ajao Estate, Ilasamaja, Ijeshatedo, Aswani, 5 Star, Isolo')">Area 7 — 2nd Rainbow, Ago Palace, Okota, Cele, Ajao Estate, Ilasamaja, Ijeshatedo, Aswani, 5 Star, Isolo</div>
+<div class="pc-dropdown-item" data-value="Area 8" onclick="selectPcOption('pickupArea','Area 8','Area 8 — Apapa, Mile 2, Alakija, Festac Town, Satellite Town, Trade Fair, Volks, Ojo Barracks')">Area 8 — Apapa, Mile 2, Alakija, Festac Town, Satellite Town, Trade Fair, Volks, Ojo Barracks</div>
+<div class="pc-dropdown-item" data-value="Area 9" onclick="selectPcOption('pickupArea','Area 9','Area 9 — Iyanaoworo, Ifako, Alapere, Ogudu, Tollgate, Ikosi, CMD Road, Magodo Phase 1, Olowora, Magodo Phase 2, Omole Phase 2')">Area 9 — Iyanaoworo, Ifako, Alapere, Ogudu, Tollgate, Ikosi, CMD Road, Magodo Phase 1, Olowora, Magodo Phase 2, Omole Phase 2</div>
+<div class="pc-dropdown-item" data-value="Area 10" onclick="selectPcOption('pickupArea','Area 10','Area 10 — Agege/Pen Cinema, Cement, Egbeda, Iyana-Ipaja')">Area 10 — Agege/Pen Cinema, Cement, Egbeda, Iyana-Ipaja</div>
+<div class="pc-dropdown-item" data-value="Area 11" onclick="selectPcOption('pickupArea','Area 11','Area 11 — Igando, Ikotun, Isheri Osun, LASU, Iyana Iba, Ayobo, Ipaja, Baruwa, Alimosho, Ejigbo')">Area 11 — Igando, Ikotun, Isheri Osun, LASU, Iyana Iba, Ayobo, Ipaja, Baruwa, Alimosho, Ejigbo</div>
+<div class="pc-dropdown-item" data-value="Area 12" onclick="selectPcOption('pickupArea','Area 12','Area 12 — OPIC, Berger, Olowora, Magodo PH 1, Ojodu')">Area 12 — OPIC, Berger, Olowora, Magodo PH 1, Ojodu</div>
+<div class="pc-dropdown-item" data-value="Area 13" onclick="selectPcOption('pickupArea','Area 13','Area 13 — Oshodi, Charly Boy, Gbagada, Pedro, Barracks, Charity')">Area 13 — Oshodi, Charly Boy, Gbagada, Pedro, Barracks, Charity</div>
+<div class="pc-dropdown-item" data-value="Area 14" onclick="selectPcOption('pickupArea','Area 14','Area 14 — Ojota, Maryland, Ketu, Mile 12')">Area 14 — Ojota, Maryland, Ketu, Mile 12</div>
+<div class="pc-dropdown-item" data-value="Specials" onclick="selectPcOption('pickupArea','Specials','Specials — Eleko, Epe, Lekki Free Zone, Dangote Refinery, Alaba Int\'l, Ajangbadi, Mowe, Ibafo, Redeemed Camp, Badagry, Ijanikin, Agbara, Magboro, Ikorodu, Sango Ota')">Specials — Eleko, Epe, Lekki Free Zone, Dangote Refinery, Alaba Int'l, Ajangbadi, Mowe, Ibafo, Redeemed Camp, Badagry, Ijanikin, Agbara, Magboro, Ikorodu, Sango Ota</div>
+                </div>
+              </div>
               </div>
               <div class="fg"><label>Pickup Street Address *</label><input type="text" id="pickupAddress" placeholder="House number and street name"></div>
               <div class="fg"><label>Phone Number *</label><input type="tel" id="senderPhone" placeholder="Primary phone number"></div>
@@ -1146,22 +1150,36 @@ function selectPcOption(id, value, label) {
 // ── RECIPIENTS ──
 let recipientCount = 0;
 const maxRecipients = 5;
-const areaOpts = `<option value="">— Select delivery area —</option>
-  <option value="Area 1">Area 1 — Alausa, Allen, Agidingbi, Ikeja GRA, Maryland, Ilupeju, Palmgroove, Shomolu, Jibowu, Yaba, Mushin, Bariga, Surulere</option>
-  <option value="Area 2">Area 2 — Ahmadu Bello Way, Osborne, Falomo, Ikoyi, Bourdillon, Banana Island, V.I, Lekki Phase 1, Ikate, Elegushi, Igboefon, Elf, JAS 38</option>
-  <option value="Area 3">Area 3 — Ajah Park, Addo Road, Badore, Lambasa, Owode, Abraham Adesanya, Olokonla, Sangotedo</option>
-  <option value="Area 4">Area 4 — Jakande, Ologolo, Osapa London, Agungi, New Road/Alpha Beach, Nicon Town, Idado, Lekki County, Chevron, Ikota, VGC</option>
-  <option value="Area 5">Area 5 — Abijo GRA, Awoyaya, Eputu Town, Lakowe, Bogije, Shapati</option>
-  <option value="Area 6">Area 6 — Marina, Lagos Island, Balogun, Obalende, CMS, Idumota, Adeniji, Sura, Ebute Ero</option>
-  <option value="Area 7">Area 7 — 2nd Rainbow, Ago Palace, Okota, Cele, Ajao Estate, Ilasamaja, Ijeshatedo, Aswani, 5 Star, Isolo</option>
-  <option value="Area 8">Area 8 — Apapa, Mile 2, Alakija, Festac Town, Satellite Town, Trade Fair, Volks, Ojo Barracks</option>
-  <option value="Area 9">Area 9 — Iyanaoworo, Ifako, Alapere, Ogudu, Tollgate, Ikosi, CMD Road, Magodo Phase 1, Olowora, Magodo Phase 2, Omole Phase 2</option>
-  <option value="Area 10">Area 10 — Agege/Pen Cinema, Cement, Egbeda, Iyana-Ipaja</option>
-  <option value="Area 11">Area 11 — Igando, Ikotun, Isheri Osun, LASU, Iyana Iba, Ayobo, Ipaja, Baruwa, Alimosho, Ejigbo</option>
-  <option value="Area 12">Area 12 — OPIC, Berger, Olowora, Magodo PH 1, Ojodu</option>
-  <option value="Area 13">Area 13 — Oshodi, Charly Boy, Gbagada, Pedro, Barracks, Charity</option>
-  <option value="Area 14">Area 14 — Ojota, Maryland, Ketu, Mile 12</option>
-  <option value="Specials">Specials — Eleko, Epe, Lekki Free Zone, Dangote Refinery, Alaba Int'l, Ajangbadi, Mowe, Ibafo, Redeemed Camp, Badagry, Ijanikin, Agbara, Magboro, Ikorodu, Sango Ota</option>`;
+const areaList = [
+  {val:'Area 1', label:'Area 1 — Alausa, Allen, Agidingbi, Ikeja GRA, Maryland, Ilupeju, Palmgroove, Shomolu, Jibowu, Yaba, Mushin, Bariga, Surulere'},
+  {val:'Area 2', label:'Area 2 — Ahmadu Bello Way, Osborne, Falomo, Ikoyi, Bourdillon, Banana Island, V.I, Lekki Phase 1, Ikate, Elegushi, Igboefon, Elf, JAS 38'},
+  {val:'Area 3', label:'Area 3 — Ajah Park, Addo Road, Badore, Lambasa, Owode, Abraham Adesanya, Olokonla, Sangotedo'},
+  {val:'Area 4', label:'Area 4 — Jakande, Ologolo, Osapa London, Agungi, New Road/Alpha Beach, Nicon Town, Idado, Lekki County, Chevron, Ikota, VGC'},
+  {val:'Area 5', label:'Area 5 — Abijo GRA, Awoyaya, Eputu Town, Lakowe, Bogije, Shapati'},
+  {val:'Area 6', label:'Area 6 — Marina, Lagos Island, Balogun, Obalende, CMS, Idumota, Adeniji, Sura, Ebute Ero'},
+  {val:'Area 7', label:'Area 7 — 2nd Rainbow, Ago Palace, Okota, Cele, Ajao Estate, Ilasamaja, Ijeshatedo, Aswani, 5 Star, Isolo'},
+  {val:'Area 8', label:'Area 8 — Apapa, Mile 2, Alakija, Festac Town, Satellite Town, Trade Fair, Volks, Ojo Barracks'},
+  {val:'Area 9', label:'Area 9 — Iyanaoworo, Ifako, Alapere, Ogudu, Tollgate, Ikosi, CMD Road, Magodo Phase 1, Olowora, Magodo Phase 2, Omole Phase 2'},
+  {val:'Area 10', label:'Area 10 — Agege/Pen Cinema, Cement, Egbeda, Iyana-Ipaja'},
+  {val:'Area 11', label:'Area 11 — Igando, Ikotun, Isheri Osun, LASU, Iyana Iba, Ayobo, Ipaja, Baruwa, Alimosho, Ejigbo'},
+  {val:'Area 12', label:'Area 12 — OPIC, Berger, Olowora, Magodo PH 1, Ojodu'},
+  {val:'Area 13', label:'Area 13 — Oshodi, Charly Boy, Gbagada, Pedro, Barracks, Charity'},
+  {val:'Area 14', label:'Area 14 — Ojota, Maryland, Ketu, Mile 12'},
+  {val:'Specials', label:'Specials — Eleko, Epe, Lekki Free Zone, Dangote Refinery, Alaba Int\'l, Ajangbadi, Mowe, Ibafo, Redeemed Camp, Badagry, Ijanikin, Agbara, Magboro, Ikorodu, Sango Ota'},
+];
+
+function buildAreaDropdown(did, placeholder) {
+  var items = '<div class="pc-dropdown-item placeholder" data-value="" onclick="selectPcOption(\''+did+'\',\'\',\''+placeholder+'\')">'+placeholder+'</div>';
+  areaList.forEach(function(a) {
+    var safeLabel = a.label.replace(/'/g, "\\'");
+    items += '<div class="pc-dropdown-item" data-value="'+a.val+'" onclick="selectPcOption(\''+did+'\',\''+a.val+'\',\''+safeLabel+'\')">'+a.label+'</div>';
+  });
+  return '<div class="pc-dropdown" id="'+did+'-wrap">'
+    + '<button type="button" class="pc-dropdown-btn" id="'+did+'-btn" onclick="togglePcDropdown(\''+did+'\')">'+placeholder+'</button>'
+    + '<input type="hidden" id="'+did+'" name="'+did+'" value="">'
+    + '<div class="pc-dropdown-list" id="'+did+'-list">'+items+'</div>'
+    + '</div>';
+}
 
 function createRecipient(n) {
   return `<div class="recipient-block" id="rb${n}">
@@ -1171,7 +1189,7 @@ function createRecipient(n) {
     </div>
     <div class="recipient-fields">
       <div class="fg"><label>Name *</label><input type="text" id="r${n}_name" placeholder="Full name"></div>
-      <div class="fg"><label>Delivery Area *</label><select id="r${n}_area">${areaOpts}</select></div>
+      <div class="fg"><label>Delivery Area *</label>${buildAreaDropdown(`r${n}_area`, '— Select delivery area —')}</div>
       <div class="fg rf-full"><label>Delivery Address *</label><input type="text" id="r${n}_address" placeholder="House number and street name"></div>
       <div class="fg"><label>Phone *</label><input type="tel" id="r${n}_phone" placeholder="Phone number"></div>
       <div class="fg"><label>Alternative No.</label><input type="tel" id="r${n}_altphone" placeholder="Alternative number"></div>
