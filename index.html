@@ -373,7 +373,7 @@ function openModal(type) {
   }
   const m = document.getElementById('serviceModal');
   if (!m) return;
-  ['nationwide','international','rental','escort'].forEach(function(t) {
+  ['nationwide','international','rental','escort','ghana'].forEach(function(t) {
     var el = document.getElementById('modal-'+t);
     if (el) el.style.display = 'none';
   });
@@ -383,7 +383,8 @@ function openModal(type) {
     nationwide: { title: '🚛 Send a Package Nationwide', sub: 'Reliable delivery across all 36 states + FCT' },
     international: { title: '🌍 Ship Globally', sub: 'International delivery via DHL, FedEx, UPS & Aramex' },
     rental: { title: '🚗 Rent a Vehicle', sub: 'Corporate, personal and event vehicle hire' },
-    escort: { title: '🛡️ Request Security Escort', sub: 'Professional security personnel for your movement' }
+    escort: { title: '🛡️ Request Security Escort', sub: 'Professional security personnel for your movement' },
+    ghana: { title: '✈️ Lagos ⇌ Ghana Express', sub: 'Same-day air freight — book before 10:00 AM' }
   };
   if (titles[type]) {
     document.getElementById('modalTitle').textContent = titles[type].title;
@@ -471,6 +472,7 @@ function closeModalOutside(e) {
         <button class="btn-outline" onclick="openModal('international')" style="font-size:13px;padding:11px 18px;">🌍 Ship Globally</button>
         <button class="btn-outline" onclick="openModal('rental')" style="font-size:13px;padding:11px 18px;">🚗 Rent a Car</button>
         <button class="btn-outline" onclick="openModal('escort')" style="font-size:13px;padding:11px 18px;">🛡️ Security Escort</button>
+        <button class="btn-outline" onclick="openModal('ghana')" style="font-size:13px;padding:11px 18px;">✈️ Lagos ⇌ Ghana</button>
       </div>
       <div class="hero-stats">
         <div><div class="stat-num" data-count="500" data-suffix="+">500+</div><div class="stat-lbl">Daily Deliveries</div></div>
@@ -1553,6 +1555,60 @@ window.addEventListener('DOMContentLoaded', function() {
         </div>
       </div>
 
+      <!-- ── LAGOS-GHANA ── -->
+      <div id="modal-ghana" style="display:none;">
+        <div style="background:rgba(196,82,10,0.06);border:1px solid rgba(196,82,10,0.12);border-radius:12px;padding:14px 16px;margin-bottom:24px;font-size:13px;color:var(--gray);">
+          ✈️ <strong>Same-day air freight</strong> between Lagos and Accra. Book before 10:00 AM. Free pickup from your location.
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;">
+          <div>
+            <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);padding-bottom:10px;border-bottom:2px solid rgba(196,82,10,0.12);margin-bottom:16px;">📍 Pickup Details</div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div class="fg"><label>Sender Name *</label><input type="text" id="gh_name" placeholder="Full name"></div>
+              <div class="fg"><label>State *</label>
+                <select id="gh_state">
+                  <option value="">— Select state —</option>
+                  <option>Abia</option><option>Adamawa</option><option>Akwa Ibom</option><option>Anambra</option>
+                  <option>Bauchi</option><option>Bayelsa</option><option>Benue</option><option>Borno</option>
+                  <option>Cross River</option><option>Delta</option><option>Ebonyi</option><option>Edo</option>
+                  <option>Ekiti</option><option>Enugu</option><option>FCT — Abuja</option><option>Gombe</option>
+                  <option>Imo</option><option>Jigawa</option><option>Kaduna</option><option>Kano</option>
+                  <option>Katsina</option><option>Kebbi</option><option>Kogi</option><option>Kwara</option>
+                  <option>Lagos</option><option>Nasarawa</option><option>Niger</option><option>Ogun</option>
+                  <option>Ondo</option><option>Osun</option><option>Oyo</option><option>Plateau</option>
+                  <option>Rivers</option><option>Sokoto</option><option>Taraba</option><option>Yobe</option><option>Zamfara</option>
+                </select>
+              </div>
+              <div class="fg"><label>Pickup Address *</label><input type="text" id="gh_address" placeholder="House number and street name"></div>
+              <div class="fg"><label>Sender Phone *</label><input type="tel" id="gh_phone" placeholder="Your phone number"></div>
+              <div class="fg"><label>Item Description *</label><textarea id="gh_item" placeholder="Describe what you are shipping..." style="min-height:80px;"></textarea></div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);padding-bottom:10px;border-bottom:2px solid rgba(196,82,10,0.12);margin-bottom:16px;">✈️ Shipment Details</div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div class="fg"><label>Recipient Name *</label><input type="text" id="gh_rName" placeholder="Full name of recipient"></div>
+              <div class="fg"><label>Destination</label><input type="text" value="Kotoka International Airport, Accra, Ghana" readonly style="background:rgba(0,0,0,0.04);color:#888;cursor:not-allowed;"></div>
+              <div class="fg"><label>Recipient Phone *</label><input type="tel" id="gh_rPhone" placeholder="Recipient phone number"></div>
+              <div class="fg"><label>Approximate Weight *</label>
+                <select id="gh_weight">
+                  <option value="">— Select weight —</option>
+                  <option value="Under 1kg">Under 1 kg</option>
+                  <option value="1–5kg">1 – 5 kg</option>
+                  <option value="5–10kg">5 – 10 kg</option>
+                  <option value="10–20kg">10 – 20 kg</option>
+                  <option value="20–50kg">20 – 50 kg</option>
+                  <option value="50kg+">50 kg and above</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:28px;text-align:center;">
+          <button class="btn-gold" style="width:100%;justify-content:center;font-size:15px;padding:15px;" onclick="submitGhana()">✈️ Submit & Open WhatsApp 💬</button>
+        </div>
+      </div>
+
       <!-- ── RENTAL ── -->
       <div id="modal-rental" style="display:none;">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;">
@@ -1756,6 +1812,26 @@ function submitNationwide() {
   
   window.open(`https://wa.me/2348188381024?text=${msg}`, '_blank');
   closeModal();
+}
+
+
+function submitGhana() {
+  var name = document.getElementById('gh_name').value;
+  var state = document.getElementById('gh_state').value;
+  var addr = document.getElementById('gh_address').value;
+  var phone = document.getElementById('gh_phone').value;
+  var item = document.getElementById('gh_item').value;
+  var rName = document.getElementById('gh_rName').value;
+  var rPhone = document.getElementById('gh_rPhone').value;
+  var weight = document.getElementById('gh_weight').value;
+  if (!name||!state||!addr||!phone||!item||!rName||!rPhone||!weight) {
+    alert('Please fill in all required fields.'); return;
+  }
+  var msg = 'Hello Redwood Logistics! I would like to book a Lagos ⇌ Ghana air freight.%0A%0A' +
+    '*--- SENDER / PICKUP ---*%0A*Name:* ' + name + '%0A*State:* ' + state + '%0A*Address:* ' + addr + '%0A*Phone:* ' + phone + '%0A*Item:* ' + item + '%0A%0A' +
+    '*--- RECIPIENT ---*%0A*Name:* ' + rName + '%0A*Destination:* Kotoka International Airport, Accra, Ghana%0A*Phone:* ' + rPhone + '%0A*Approx. Weight:* ' + weight + '%0A%0A' +
+    '*Note:* Free pickup from sender. Same-day air delivery. Please confirm availability and pricing.';
+  window.open('https://wa.me/2348188381024?text=' + msg, '_blank');
 }
 
 function submitInternational() {
