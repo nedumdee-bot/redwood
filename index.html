@@ -373,6 +373,33 @@ footer { background:#0D0603; color:rgba(255,255,255,0.6); padding:60px 5% 32px; 
 .pc-dropdown-item:hover, .pc-dropdown-item.selected { background:rgba(196,82,10,0.3); color:var(--gold); }
 .pc-dropdown-item.placeholder { color:rgba(255,255,255,0.4); }
 
+
+/* Stats counter */
+#stats-section { background:linear-gradient(135deg,var(--orange),var(--brown)); padding:72px 5%; }
+.stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:32px; max-width:1100px; margin:0 auto; text-align:center; }
+.stat-item { color:white; }
+.stat-number { font-family:'Playfair Display',serif; font-size:clamp(36px,5vw,60px); font-weight:900; line-height:1; }
+.stat-suffix { font-family:'Playfair Display',serif; font-size:clamp(28px,4vw,48px); font-weight:900; }
+.stat-label { font-size:13px; color:rgba(255,255,255,0.75); margin-top:8px; letter-spacing:0.5px; }
+@media(max-width:768px){ .stats-grid { grid-template-columns:repeat(2,1fr); gap:24px; } }
+@media(max-width:480px){ .stats-grid { grid-template-columns:repeat(2,1fr); } }
+
+/* FAQ */
+#faq-section { background:var(--cream); padding:80px 5%; }
+.faq-wrap { max-width:800px; margin:0 auto; }
+.faq-item { border-bottom:1px solid rgba(139,69,19,0.15); }
+.faq-q { width:100%; background:none; border:none; text-align:left; padding:20px 0; font-family:'DM Sans',sans-serif; font-size:15px; font-weight:600; color:var(--brown); cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.faq-q:hover { color:var(--orange); }
+.faq-icon { font-size:20px; color:var(--orange); flex-shrink:0; transition:transform 0.3s; }
+.faq-a { display:none; padding:0 0 20px; font-size:14px; color:#555; line-height:1.8; }
+.faq-item.open .faq-a { display:block; }
+.faq-item.open .faq-icon { transform:rotate(45deg); }
+
+/* Urgency indicator */
+.urgency-bar { display:flex; align-items:center; gap:10px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.15); border-radius:8px; padding:10px 16px; margin-bottom:20px; font-size:13px; color:white; }
+.urgency-dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+.urgency-dot.green { background:#4CAF50; box-shadow:0 0 6px #4CAF50; animation:waPulse 2s infinite; }
+.urgency-dot.amber { background:#FFC107; box-shadow:0 0 6px #FFC107; }
 </style>
 </head>
 <body>
@@ -614,6 +641,7 @@ function closeModalOutside(e) {
 
         <!-- STEP 1: PICKUP + SENDER + RECIPIENTS -->
         <div class="fstep active" id="fs1">
+          <div class="urgency-bar" id="urgency-bar"><div class="urgency-dot" id="urgency-dot"></div><span id="urgency-text"></span></div>
           <h3 id="dispatch-form">Pickup & Delivery Details</h3>
           <p class="fstep-desc">Enter sender details on the left and recipient details on the right.</p>
           <div class="two-col">
@@ -983,6 +1011,28 @@ function closeModalOutside(e) {
 </section>
 
 <!-- TESTIMONIALS -->
+
+<!-- STATS -->
+<section id="stats-section">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div><span class="stat-number" data-target="3200">0</span><span class="stat-suffix">+</span></div>
+      <div class="stat-label">Deliveries Completed</div>
+    </div>
+    <div class="stat-item">
+      <div><span class="stat-number" data-target="98">0</span><span class="stat-suffix">%</span></div>
+      <div class="stat-label">On-Time Rate</div>
+    </div>
+    <div class="stat-item">
+      <div><span class="stat-number" data-target="6">0</span><span class="stat-suffix">+</span></div>
+      <div class="stat-label">Cities Covered</div>
+    </div>
+    <div class="stat-item">
+      <div><span class="stat-number" data-target="5">0</span><span class="stat-suffix">★</span></div>
+      <div class="stat-label">Average Client Rating</div>
+    </div>
+  </div>
+</section>
 <section id="testimonials">
   <div class="sec-inner">
     <div style="text-align:center;margin-bottom:12px;">
@@ -1030,6 +1080,51 @@ function closeModalOutside(e) {
             <a href="https://www.facebook.com/RedwoodLogisticsNG" target="_blank" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;">👤 Redwood Logistics NG</a>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section id="faq-section">
+  <div class="sec-inner faq-wrap">
+    <div style="text-align:center;margin-bottom:48px;">
+      <div class="sec-label">FAQ</div>
+      <h2 class="sec-title">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How do I book a delivery? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Simply click the "Book a Dispatch" button on this page, fill in your pickup and delivery details, and your booking request is sent directly to us on WhatsApp. Our team will confirm within minutes.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you deliver on weekends? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes — we operate Monday through Saturday, 8:00 AM to 6:00 PM. We are closed on Sundays. For urgent Saturday pickups, please book before 5:00 PM.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What areas in Lagos do you cover? <span class="faq-icon">+</span></button>
+        <div class="faq-a">We cover all of Lagos — from Victoria Island and Lekki to Ikeja, Surulere, Apapa, Alimosho, Ibeju-Lekki, Badagry, and everywhere in between. Use our Quick Price Check tool to get an instant estimate for your specific route.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How does Lagos–Ghana air freight work? <span class="faq-icon">+</span></button>
+        <div class="faq-a">We offer same-day air freight between Lagos and Accra. We pick up your item in Lagos, handle all export documentation, and deliver to Kotoka International Airport, Accra. Your recipient clears from their end. Contact us for weight-based pricing.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What happens if my item is damaged or lost? <span class="faq-icon">+</span></button>
+        <div class="faq-a">We handle every shipment with care and professionalism. For high-value items, we strongly recommend declaring the item value at booking so appropriate measures are taken. Please contact us immediately if you have any concerns about a delivery.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Can you handle fragile or luxury items? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Absolutely. We regularly handle luxury fashion, wigs, fragile goods, and high-value items for premium brands and individuals. Our team is trained to package and transport delicate items safely.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you offer interstate deliveries? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes. We cover major cities including Abuja, Port Harcourt, Ibadan, Benin City, Enugu, Kaduna, Owerri, Umuahia, Uyo, Jos, Akure, and Ilorin. Transit times and rates vary by destination — contact us for a quote.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How are payments made? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Payment details are confirmed at the time of booking via WhatsApp. We accept bank transfers. Our team will provide account details once your booking is confirmed.</div>
       </div>
     </div>
   </div>
