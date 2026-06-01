@@ -1534,7 +1534,6 @@ window.addEventListener('DOMContentLoaded', function() {
             <div style="display:flex;flex-direction:column;gap:12px;">
               <div class="fg"><label>Destination Country *</label><input type="text" id="int_country" placeholder="e.g. United Kingdom, USA, Canada..."></div>
               <div class="fg"><label>Recipient Name *</label><input type="text" id="int_recipientName" placeholder="Full name of recipient"></div>
-              <div class="fg"><label>Destination</label><input type="text" id="int_recipientAddress" value="Kotoka International Airport, Accra, Ghana" readonly style="background:rgba(196,82,10,0.04);color:var(--gray);font-style:italic;"></div>
               <div class="fg"><label>Recipient Phone *</label><input type="tel" id="int_recipientPhone" placeholder="Recipient phone number"></div>
               <div class="fg"><label>Approximate Weight *</label>
                 <select id="int_weight">
@@ -1542,10 +1541,6 @@ window.addEventListener('DOMContentLoaded', function() {
                   <option>Under 1kg</option><option>1kg – 5kg</option><option>5kg – 10kg</option>
                   <option>10kg – 20kg</option><option>20kg – 50kg</option><option>Above 50kg</option>
                 </select>
-              </div>
-              <div style="background:rgba(201,149,42,0.08);border:1px solid rgba(201,149,42,0.2);border-radius:10px;padding:14px;margin-top:4px;">
-                <div style="font-size:12px;font-weight:700;color:var(--brown);margin-bottom:4px;">✈️ Same-Day Air Freight</div>
-                <div style="font-size:12px;color:var(--gray);">One flight daily. Book before <strong>10:00 AM</strong> for same-day delivery. Starting from <strong>₦70,000</strong>.</div>
               </div>
             </div>
           </div>
@@ -1604,7 +1599,11 @@ window.addEventListener('DOMContentLoaded', function() {
             </div>
           </div>
         </div>
-        <div style="margin-top:28px;text-align:center;">
+        <div style="background:rgba(201,149,42,0.08);border:1px solid rgba(201,149,42,0.2);border-radius:10px;padding:14px;margin-top:24px;">
+          <div style="font-size:12px;font-weight:700;color:var(--brown);margin-bottom:4px;">✈️ Same-Day Air Freight</div>
+          <div style="font-size:12px;color:var(--gray);">One flight daily. Book before <strong>10:00 AM</strong> for same-day delivery. Starting from <strong>₦70,000</strong>.</div>
+        </div>
+        <div style="margin-top:20px;text-align:center;">
           <button class="btn-gold" style="width:100%;justify-content:center;font-size:15px;padding:15px;" onclick="submitGhana()">✈️ Submit & Open WhatsApp 💬</button>
         </div>
       </div>
