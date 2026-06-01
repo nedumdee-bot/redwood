@@ -368,7 +368,7 @@ footer { background:#0D0603; color:rgba(255,255,255,0.6); padding:60px 5% 32px; 
 // Global modal opener - defined early so all buttons can call it
 function openModal(type) {
   if (type === 'dispatch') {
-    document.getElementById('booking').scrollIntoView({behavior:'smooth'});
+    document.getElementById('dispatch-form').scrollIntoView({behavior:'smooth'});
     return;
   }
   const m = document.getElementById('serviceModal');
@@ -505,7 +505,7 @@ function closeModalOutside(e) {
       </div>
     </div>
 
-    <div class="booking-layout">
+    <div class="booking-layout" id="dispatch-form">
       <!-- LEFT: CONTACT + PRICE CHECKER -->
       <div>
         <div class="cinfo">
