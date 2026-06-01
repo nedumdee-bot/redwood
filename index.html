@@ -298,7 +298,9 @@ textarea { resize:vertical; min-height:80px; }
 .recipient-hd { display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; padding-bottom:12px; border-bottom:2px solid rgba(196,82,10,0.08); }
 .recipient-hd-label { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--orange); }
 .btn-remove { background:none; border:none; color:#e53e3e; font-size:13px; font-weight:600; cursor:pointer; font-family:'DM Sans',sans-serif; }
-.recipient-fields { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.recipient-fields { display:grid; grid-template-columns:1fr 1fr; gap:14px; overflow:visible; }
+.recipient-fields .fg { position:relative; }
+.recipient-fields .pc-dropdown-list { z-index:10000; }
 .rf-full { grid-column:span 2; }
 .add-recipient-btn { width:100%; background:transparent; border:2px dashed rgba(196,82,10,0.25); color:var(--orange); padding:12px; border-radius:10px; cursor:pointer; font-size:14px; font-weight:700; font-family:'DM Sans',sans-serif; transition:all 0.2s; margin-top:4px; }
 .add-recipient-btn:hover { border-color:var(--orange); background:rgba(196,82,10,0.04); }
