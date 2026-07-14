@@ -1,0 +1,36 @@
+# Netlify configuration for Clear Path Mentorship
+# This is a plain static site (no build step) served from the repo root.
+
+[build]
+  publish = "."
+  command = ""
+
+# Sensible security headers for a simple static site.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Nice-to-have: let visitors reach pages without the ".html" (e.g. /about).
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+[[redirects]]
+  from = "/services"
+  to = "/services.html"
+  status = 200
+[[redirects]]
+  from = "/plans"
+  to = "/plans.html"
+  status = 200
+[[redirects]]
+  from = "/booking"
+  to = "/booking.html"
+  status = 200
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200

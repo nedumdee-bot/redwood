@@ -105,18 +105,43 @@ those few lines and the whole site re-themes.
 
 ---
 
-## Putting it online (free)
+## Putting it online (free) — Netlify
 
-### Option A — GitHub Pages
-1. Push these files to the default branch.
-2. On GitHub: **Settings → Pages**, set **Source** to "Deploy from a branch",
-   pick the branch and `/ (root)`, and **Save**.
-3. Your site goes live at `https://<username>.github.io/<repo>/`.
+A `netlify.toml` is included, so Netlify knows exactly how to serve the site.
+There are two ways to deploy; the **connected** one is recommended because the
+site updates itself whenever the repo changes.
 
-### Option B — Netlify (drag & drop)
-Sign up at [netlify.com](https://netlify.com), drag this folder onto the deploy
-area (or connect the repo), and you get a live URL instantly. Add a custom domain
-(e.g. `clearpathmentorship.com`) later from any registrar.
+### Fastest: instant drag-and-drop
+1. Go to **[app.netlify.com/drop](https://app.netlify.com/drop)**.
+2. Drag the whole project folder onto the page.
+3. You get a live URL immediately (sign in with email/GitHub to keep it).
+   *Note: this is a one-time snapshot — good for a quick look.*
+
+### Recommended: connect the GitHub repo (auto-updates)
+1. Sign up at **[netlify.com](https://app.netlify.com/signup)** (free) and click
+   **Add new site → Import an existing project → GitHub**.
+2. Authorize Netlify and pick the **`redwood`** repository.
+3. Set **Branch to deploy** to `claude/aunt-website-pedenf` (or merge to `main`
+   first and deploy `main`). Leave build command empty and publish directory `.`
+   — the included `netlify.toml` already sets this. Click **Deploy**.
+4. You get a URL like `random-name.netlify.app` in ~30 seconds. Rename it under
+   **Site configuration → Change site name**.
+
+### Adding Dr. Ugwu's photos (no coding)
+Once connected, add the two photos straight from GitHub's website:
+1. On the repo, open the **`assets`** folder → **Add file → Upload files**.
+2. Drag in the two images, named exactly `lilian-portrait.jpg` and
+   `lilian-hero.jpg`, and click **Commit changes**.
+3. Netlify rebuilds automatically and the photos appear on the site.
+
+### The custom domain (`clearpathmentorship.com`)
+Buy the domain at any registrar, then in Netlify go to **Domain management → Add a
+domain** and follow the DNS steps. Netlify provides free HTTPS automatically.
+
+### Alternative host — GitHub Pages
+Prefer GitHub Pages? On GitHub: **Settings → Pages**, set **Source** to "Deploy
+from a branch", pick the branch and `/ (root)`, and **Save**. The site goes live
+at `https://<username>.github.io/redwood/`.
 
 ---
 
