@@ -6,9 +6,9 @@ mentorship practice of **Dr. Lilian Ugwu**. Tagline: *Support. Growth. Clarity.*
 It's built with plain **HTML, CSS, and JavaScript** — no frameworks, no build
 step. That means it's free to host, easy to edit, and will keep working for years.
 
-> **A note on content:** the words and testimonials are a thoughtful starting
-> point. Real client testimonials, Dr. Ugwu's photos, and her booking-calendar
-> link still need to be added — see **[To finish before launch](#to-finish-before-launch)**.
+> **A note on content:** Dr. Ugwu's photos are in place. Real client testimonials
+> and her booking-calendar link still need to be added — see
+> **[To finish before launch](#to-finish-before-launch)**.
 
 ---
 
@@ -45,15 +45,12 @@ python3 -m http.server 8000
 
 ## To finish before launch
 
-### 1. Add Dr. Ugwu's photos  ← needed
-The two photo spots are **already wired up** — just add the image files with
-these exact names to the `assets/` folder and they'll appear automatically:
-- **Home hero** (`index.html`) → `assets/lilian-hero.jpg` (a warm candid photo)
-- **About page** (`about.html`) → `assets/lilian-portrait.jpg` (a clear portrait)
+### 1. Photos  ✓ done
+Dr. Ugwu's photos are in the `assets/` folder and already showing on the site:
+- **Home hero** (`index.html`) → `assets/lilian-hero.jpg`
+- **About page** (`about.html`) → `assets/lilian-portrait.jpg`
 
-Until those files exist, a soft placeholder is shown instead — nothing breaks.
-(JPG or PNG both work; if you use PNG, change the `.jpg` in the filename to `.png`
-inside the `<img src="…">` tag on that page.)
+To swap in a different photo later, just replace the file of the same name.
 
 ### 2. Connect the booking calendar  ← needed
 `booking.html` has a placeholder where a **Calendly / Acuity** calendar will go.
@@ -73,7 +70,7 @@ The **Contact** and **Booking** forms are pre-wired for the free
 Until this is done, the forms show a friendly "email us directly" message.
 
 ### 4. Real details
-- **Email** — set to `lily@clearpam.com` (already applied across the site). See
+- **Email** — set to `hello@clearpathmentorship.com` (already applied across the site). See
   "Email setup" below for making that address deliver to a Gmail inbox.
 - **Phone** — set to `+1 (619) 792-3662` (already applied).
 - **Social links** — the footer `href="#"` links (Instagram / LinkedIn / Facebook)
@@ -86,13 +83,13 @@ Until this is done, the forms show a friendly "email us directly" message.
   put them at that address you buy the domain (Namecheap, Cloudflare, Google
   Domains, etc.) and point it at your host (GitHub Pages or Netlify — see below).
   The preview link is a temporary address, not the final domain.
-- **Making `lily@clearpam.com` arrive in Gmail** — the address lives on the
-  `clearpam.com` domain, so you first need email hosting for that domain (e.g.
+- **Making `hello@clearpathmentorship.com` arrive in Gmail** — the address lives on the
+  `clearpathmentorship.com` domain, so you first need email hosting for that domain (e.g.
   Google Workspace, Zoho Mail free tier, or your registrar's email + forwarding).
-  Then set up **forwarding** so every message to `lily@clearpam.com` is copied to
+  Then set up **forwarding** so every message to `hello@clearpathmentorship.com` is copied to
   `uchenna.ogbu@gmail.com`. Optionally add it in Gmail under
   *Settings → Accounts → "Send mail as"* so she can also reply as
-  `lily@clearpam.com` from Gmail. (Her personal Gmail is kept private — it is only
+  `hello@clearpathmentorship.com` from Gmail. (Her personal Gmail is kept private — it is only
   the forwarding destination and never shown on the website.)
 
 ---
