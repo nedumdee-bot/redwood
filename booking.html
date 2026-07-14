@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book a Call — Rivera Consulting</title>
-  <meta name="description" content="Request a free 30-minute discovery call with Rivera Consulting. Pick a day and time that suits you." />
+  <title>Book a Session — Clear Path Mentorship</title>
+  <meta name="description" content="Book a free discovery call or a session with Dr. Lilian Ugwu. Choose a time that suits you." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,12 +17,17 @@
 
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="index.html"><span class="mark">R</span> Rivera&nbsp;Consulting</a>
+      <a class="brand" href="index.html">
+        <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 21 A8 8 0 0 1 3 13 C3 6 8 2 22 3 C23 17 18 21 11 21 Z"/><path d="M21 3 C13 6.5 8 12 7 19"/></svg></span>
+        Clear&nbsp;Path&nbsp;Mentorship
+      </a>
       <button class="nav-toggle" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false"><span></span></button>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
+        <li><a href="plans.html">Plans</a></li>
+        <li><a href="booking.html" class="active">Booking</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li class="nav-cta"><a class="btn btn--primary" href="booking.html">Book a call</a></li>
       </ul>
@@ -32,11 +37,30 @@
   <main>
     <section class="page-hero section">
       <div class="container narrow center">
-        <p class="breadcrumb"><a href="index.html">Home</a> / Book a call</p>
+        <p class="breadcrumb"><a href="index.html">Home</a> / Booking</p>
         <p class="eyebrow">Booking</p>
         <h1>Book your free discovery call</h1>
-        <p class="lead">Choose a service and a time that suits you. I’ll confirm by email within one business day —
-          no payment needed to book.</p>
+        <p class="lead">Choose a service and a time that suits you. Dr. Ugwu will confirm by email —
+          no payment is needed to book.</p>
+      </div>
+    </section>
+
+    <!-- CALENDAR EMBED -->
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <!-- CALENDLY / ACUITY:
+             When Dr. Ugwu shares her Calendly or Acuity link, replace the block below with
+             the embed code from her account, for example:
+             <div class="calendly-inline-widget" data-url="https://calendly.com/her-link"
+                  style="min-width:320px;height:700px;"></div>
+             <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+             Until then, the request form below works right away. -->
+        <div class="calendar-embed reveal">
+          <div class="ce-icon">📅</div>
+          <h3>Live calendar coming soon</h3>
+          <p>A self-service booking calendar will appear here once it’s connected. In the meantime, please use the
+            quick request form below and Dr. Ugwu will confirm your time by email.</p>
+        </div>
       </div>
     </section>
 
@@ -48,29 +72,24 @@
           <h2>What to expect</h2>
           <ul class="info-list" style="margin-top:1.5rem;">
             <li>
-              <span class="icon">⏱️</span>
+              <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
               <div><b>30 minutes</b><span>A relaxed, no-pressure conversation.</span></div>
             </li>
             <li>
-              <span class="icon">💻</span>
-              <div><b>Video or phone</b><span>Whatever’s easiest for you.</span></div>
+              <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="15" rx="2"/><path d="M8 21h8M12 19v2"/></svg></span>
+              <div><b>Video or phone</b><span>Whatever feels most comfortable.</span></div>
             </li>
             <li>
-              <span class="icon">✅</span>
-              <div><b>Clear next step</b><span>You’ll leave knowing how I can help.</span></div>
+              <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>
+              <div><b>A clear next step</b><span>You’ll leave knowing how I can help.</span></div>
             </li>
           </ul>
 
           <div class="card" style="margin-top:2rem;">
             <div class="stars">★★★★★</div>
-            <p style="font-family:var(--font-head); font-style:italic; color:var(--ink);">“Our discovery call alone gave me more direction than a year of guessing.”</p>
-            <p class="hint" style="margin-bottom:0;">— David T., founder</p>
+            <p style="font-family:var(--font-head); font-style:italic; color:var(--ink);">“A calm, judgment-free space. I left our first call feeling genuinely hopeful.”</p>
+            <p class="hint" style="margin-bottom:0;">— Sample client feedback</p>
           </div>
-
-          <p class="hint" style="margin-top:1.5rem;">
-            Prefer a self-service calendar? You can also connect a Calendly or Google Calendar booking link here —
-            see the README for how.
-          </p>
         </div>
 
         <!-- Booking form -->
@@ -102,9 +121,10 @@
               <select id="b-service" name="service" required>
                 <option value="">Choose one…</option>
                 <option>Free Discovery Call (30 min)</option>
-                <option>Strategy Session (90 min)</option>
-                <option>Monthly Coaching</option>
-                <option>Financial Clarity Review</option>
+                <option>1-on-1 Counseling Session</option>
+                <option>Mentorship Plan</option>
+                <option>Consultation Call</option>
+                <option>Workshop / Group Session</option>
                 <option>Not sure yet</option>
               </select>
             </div>
@@ -121,13 +141,14 @@
                   <option>Morning (9am – 12pm)</option>
                   <option>Afternoon (12pm – 3pm)</option>
                   <option>Late afternoon (3pm – 5pm)</option>
+                  <option>Evening (5pm – 7pm)</option>
                 </select>
               </div>
             </div>
 
             <div class="field">
-              <label for="b-notes">Anything I should know? <span class="hint" style="display:inline;">(optional)</span></label>
-              <textarea id="b-notes" name="notes" placeholder="A sentence about your business or what you’d like to focus on…"></textarea>
+              <label for="b-notes">Anything you’d like me to know? <span class="hint" style="display:inline;">(optional)</span></label>
+              <textarea id="b-notes" name="notes" placeholder="A sentence about what you’d like support with…"></textarea>
             </div>
 
             <button type="submit" class="btn btn--primary btn--block">Request this time</button>
@@ -135,8 +156,8 @@
             <div class="form-status" role="status" aria-live="polite"></div>
 
             <p class="form-note">
-              <span aria-hidden="true">📅</span>
-              <span>This sends a request — I’ll email you to confirm the exact time. You won’t be charged for booking.</span>
+              <span aria-hidden="true">💛</span>
+              <span>This sends a request — Dr. Ugwu will email you to confirm the exact time. You won’t be charged for booking.</span>
             </p>
           </form>
         </div>
@@ -148,35 +169,38 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <a class="brand" href="index.html"><span class="mark">R</span> Rivera&nbsp;Consulting</a>
-        <p style="margin-top:1rem; max-width:34ch; color:#b8b0a5;">Helping small businesses plan smarter, work calmer, and grow with confidence.</p>
+        <a class="brand" href="index.html">
+          <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 21 A8 8 0 0 1 3 13 C3 6 8 2 22 3 C23 17 18 21 11 21 Z"/><path d="M21 3 C13 6.5 8 12 7 19"/></svg></span>
+          Clear&nbsp;Path&nbsp;Mentorship
+        </a>
+        <p style="margin-top:1rem; max-width:36ch; color:#a8b8b9;">Support. Growth. Clarity. A safe, judgment-free space for counseling and mentorship with Dr. Lilian Ugwu.</p>
         <div class="social">
-          <a href="#" aria-label="LinkedIn" title="LinkedIn">in</a>
           <a href="#" aria-label="Instagram" title="Instagram">◎</a>
+          <a href="#" aria-label="LinkedIn" title="LinkedIn">in</a>
           <a href="#" aria-label="Facebook" title="Facebook">f</a>
         </div>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
         <ul>
-          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
+          <li><a href="plans.html">Plans &amp; pricing</a></li>
           <li><a href="booking.html">Book a call</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Get in touch</h4>
         <ul>
-          <li><a href="mailto:hello@riveraconsulting.com">hello@riveraconsulting.com</a></li>
-          <li><a href="tel:+15550123456">(555) 012-3456</a></li>
+          <li><a href="mailto:hello@clearpathmentorship.com">hello@clearpathmentorship.com</a></li>
+          <li><a href="tel:+16197923662">+1 (619) 792-3662</a></li>
           <li><a href="contact.html">Contact page →</a></li>
         </ul>
       </div>
     </div>
     <div class="container footer-base">
-      <span>© <span id="year">2026</span> Rivera Consulting. All rights reserved.</span>
-      <span>Made with care.</span>
+      <span>© <span id="year">2026</span> Clear Path Mentorship. All rights reserved.</span>
+      <span>Mentorship &amp; coaching support — not a substitute for emergency or medical care.</span>
     </div>
   </footer>
 

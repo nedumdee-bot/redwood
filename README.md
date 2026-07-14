@@ -1,14 +1,14 @@
-# Rivera Consulting — Website
+# Clear Path Mentorship — Website
 
-A clean, fast, multi-page website for a professional-services business.
+A calm, professional website for **Clear Path Mentorship** — the counseling &
+mentorship practice of **Dr. Lilian Ugwu**. Tagline: *Support. Growth. Clarity.*
+
 It's built with plain **HTML, CSS, and JavaScript** — no frameworks, no build
-step. That means it's cheap (free) to host, easy to edit, and will keep working
-for years.
+step. That means it's free to host, easy to edit, and will keep working for years.
 
-> **This is a starter you customize.** All the names, text, prices, and contact
-> details are friendly placeholders for a fictional "Rivera Consulting / Jane
-> Rivera". Follow **[Make it yours](#make-it-yours)** below to turn it into your
-> aunt's real website.
+> **A note on content:** the words and testimonials are a thoughtful starting
+> point. Real client testimonials, Dr. Ugwu's photos, and her booking-calendar
+> link still need to be added — see **[To finish before launch](#to-finish-before-launch)**.
 
 ---
 
@@ -16,133 +16,103 @@ for years.
 
 | File | What it is |
 |------|------------|
-| `index.html` | Home page — hero, services preview, how it works, testimonials |
-| `about.html` | About / bio page |
-| `services.html` | Services & pricing, plus FAQ |
-| `contact.html` | Contact form + email/phone/hours |
-| `booking.html` | "Book a call" scheduling request form |
+| `index.html` | Home — welcome, services overview, approach, testimonials |
+| `about.html` | About Dr. Lilian Ugwu — bio, approach, what to expect |
+| `services.html` | Services — counseling, mentorship, workshops, consultations + FAQ |
+| `plans.html` | Subscription plans ($0 / $49 / $99 / $199) and one-time add-ons |
+| `booking.html` | Booking — Calendly placeholder + a working request form |
+| `contact.html` | Contact form + email/phone/hours + safety disclaimer |
 | `404.html` | Friendly "page not found" page |
-| `css/styles.css` | All styling (one file, easy to re-theme) |
+| `css/styles.css` | All styling — re-theme via the variables at the top |
 | `js/main.js` | Menu, animations, and form handling |
-| `assets/favicon.svg` | The little icon in the browser tab |
+| `assets/favicon.svg` | The browser-tab icon |
+
+*Planned next (not built yet): Blog / Resources and Privacy / Terms pages.*
 
 ---
 
 ## See it on your computer
 
-Just open `index.html` in a web browser by double-clicking it — that's enough to
-look around.
-
-For the forms and menus to behave exactly like they will online, run a tiny
-local server instead (optional):
+Double-click `index.html` to open it in a browser. For forms and menus to behave
+exactly as they will online, run a tiny local server instead (optional):
 
 ```bash
-# From inside this folder:
 python3 -m http.server 8000
-# then open http://localhost:8000 in your browser
+# then open http://localhost:8000
 ```
 
 ---
 
-## Make it yours
+## To finish before launch
 
-You don't need to be a coder. Open the `.html` files in any text editor
-(even Notepad or TextEdit) and change the words. Here's the checklist:
+### 1. Add Dr. Ugwu's photos  ← needed
+There are two photo spots with placeholders (search the HTML for `PHOTO:`):
+- **Home hero** (`index.html`) — a warm candid photo
+- **About page** (`about.html`) — a clear portrait / headshot
 
-### 1. Name, tagline & bio
-- **Business name** "Rivera Consulting" appears in the header and footer of every
-  page, and in the `<title>` at the top. Find-and-replace it across all files.
-- **Her name & story** live in `index.html` (hero) and `about.html`.
-- **The logo letter** is the "R" in the little coloured square (search for
-  `class="mark"`). Change it to her initial.
-
-### 2. Contact details  ← important
-These placeholders appear on several pages — replace **all** of them:
-- Email: `hello@riveraconsulting.com`
-- Phone: `(555) 012-3456` **and** the link version `+15550123456`
-- Hours & area: on `contact.html`
-- Social links: the `href="#"` links in every footer (LinkedIn / Instagram /
-  Facebook). Paste her real profile URLs, or delete the ones she doesn't use.
-
-### 3. Services & prices
-Edit `services.html` — change the service names, descriptions, and the prices
-(e.g. `$250`). The home page (`index.html`) also lists three services; keep them
-roughly in sync.
-
-### 4. A photo of your aunt
-`about.html` has a placeholder panel with her initials. To use a real photo:
-1. Put the image in the `assets/` folder (e.g. `assets/jane.jpg`).
-2. In `about.html`, find the `<div ... >JR</div>` block and replace it with:
+To add a photo:
+1. Put the image in the `assets/` folder (e.g. `assets/lilian-portrait.jpg`).
+2. Replace the `<div class="photo-placeholder">…</div>` block with:
    ```html
-   <img src="assets/jane.jpg" alt="Jane Rivera" style="border-radius:12px;" />
+   <img src="assets/lilian-portrait.jpg" alt="Dr. Lilian Ugwu" />
    ```
 
-### 5. Re-theme the colours (optional)
-Open `css/styles.css` and edit the values at the very top under `:root`
-(`--primary`, `--accent`, `--bg`, etc.). Change those few lines and the whole
-site updates.
+### 2. Connect the booking calendar  ← needed
+`booking.html` has a placeholder where a **Calendly / Acuity** calendar will go.
+When Dr. Ugwu shares her booking link, replace the `calendar-embed` block with the
+embed code from her account (there are step-by-step comments in the file). Until
+then, the request form below it works immediately.
+
+### 3. Make the forms send email  ← needed
+The **Contact** and **Booking** forms are pre-wired for the free
+[Formspree](https://formspree.io) service:
+1. Sign up at [formspree.io](https://formspree.io) with the email that should
+   **receive** enquiries.
+2. Create a form; Formspree gives you an endpoint like `https://formspree.io/f/abcdwxyz`.
+3. In `contact.html` and `booking.html`, find `data-endpoint="https://formspree.io/f/YOUR_FORM_ID"`
+   and replace `YOUR_FORM_ID` with your real code.
+
+Until this is done, the forms show a friendly "email us directly" message.
+
+### 4. Real details to confirm
+- **Email** — the placeholder is `hello@clearpathmentorship.com`. Replace it
+  everywhere with Dr. Ugwu's real address (find-and-replace across all files).
+- **Phone** — set to `+1 (619) 792-3662` (already applied).
+- **Social links** — the footer `href="#"` links (Instagram / LinkedIn / Facebook)
+  point nowhere yet; add her real profiles or remove the ones she doesn't use.
+- **Testimonials** — replace the sample quotes on the Home page with real client
+  feedback (with permission).
 
 ---
 
-## Making the forms actually send email
+## Colours & fonts
 
-The **Contact** and **Booking** forms are ready to go, but a static website
-can't send email by itself — it needs a free form service to relay messages.
-The site is pre-wired for **[Formspree](https://formspree.io)** (free tier is
-plenty for a small business):
-
-1. Sign up at [formspree.io](https://formspree.io) with the email address where
-   you want to **receive** enquiries.
-2. Create a new form — Formspree gives you an endpoint like
-   `https://formspree.io/f/abcdwxyz`.
-3. In **`contact.html`** and **`booking.html`**, find this line:
-   ```html
-   <form data-endpoint="https://formspree.io/f/YOUR_FORM_ID" novalidate>
-   ```
-   and replace `YOUR_FORM_ID` with your real code (e.g. `abcdwxyz`).
-
-That's it — submissions now arrive in your inbox. Until you do this, the forms
-show a friendly "please email us directly" message instead of failing silently.
-
-> Any similar service (Getform, Basin, Web3Forms) works the same way — just paste
-> its endpoint into the `data-endpoint` attribute.
-
-### Optional: a real booking calendar
-If she'd rather let people pick a slot from a live calendar, create a free
-[Calendly](https://calendly.com) account and either:
-- replace the booking **form** in `booking.html` with your Calendly embed code, or
-- point the "Book a call" buttons at your Calendly link.
+Open `css/styles.css` and edit the values at the top under `:root` — `--primary`
+(calm blue-teal), `--accent` (sage green), `--bg` (soft neutral), etc. Change
+those few lines and the whole site re-themes.
 
 ---
 
 ## Putting it online (free)
 
-Because it's just files, hosting is easy and free. Two good options:
+### Option A — GitHub Pages
+1. Push these files to the default branch.
+2. On GitHub: **Settings → Pages**, set **Source** to "Deploy from a branch",
+   pick the branch and `/ (root)`, and **Save**.
+3. Your site goes live at `https://<username>.github.io/<repo>/`.
 
-### Option A — GitHub Pages (this repo is already on GitHub)
-1. Push these files to the repository's default branch.
-2. On GitHub: **Settings → Pages → Build and deployment**.
-3. Set **Source** to "Deploy from a branch", pick your branch and the `/ (root)`
-   folder, and **Save**.
-4. After a minute, your site is live at
-   `https://<username>.github.io/<repo>/`.
-
-### Option B — Netlify or Cloudflare Pages (drag & drop)
-1. Go to [netlify.com](https://netlify.com) (free) and sign up.
-2. Drag this whole folder onto the deploy area, or connect the GitHub repo.
-3. You get a live URL instantly, and can add a custom domain later.
-
-### A custom domain (e.g. `riveraconsulting.com`)
-Buy a domain from any registrar (Namecheap, Cloudflare, Google Domains, etc.),
-then follow your host's "custom domain" instructions to point it at the site.
+### Option B — Netlify (drag & drop)
+Sign up at [netlify.com](https://netlify.com), drag this folder onto the deploy
+area (or connect the repo), and you get a live URL instantly. Add a custom domain
+(e.g. `clearpathmentorship.com`) later from any registrar.
 
 ---
 
 ## Accessibility & quality notes
 
-- Works on phones, tablets, and desktops (responsive).
+- Responsive on phones, tablets, and desktops.
 - Keyboard-navigable, with visible focus outlines and screen-reader labels.
 - Respects "reduce motion" system settings.
-- Fast: two small local files plus one web font. No trackers.
+- Includes a clear safety disclaimer (counseling/mentorship is not emergency care).
 
-Enjoy — and good luck to your aunt's business! 🌱
+With warmth — good luck to Dr. Ugwu and Clear Path Mentorship. 🌿
