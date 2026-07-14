@@ -46,16 +46,14 @@ python3 -m http.server 8000
 ## To finish before launch
 
 ### 1. Add Dr. Ugwu's photos  ← needed
-There are two photo spots with placeholders (search the HTML for `PHOTO:`):
-- **Home hero** (`index.html`) — a warm candid photo
-- **About page** (`about.html`) — a clear portrait / headshot
+The two photo spots are **already wired up** — just add the image files with
+these exact names to the `assets/` folder and they'll appear automatically:
+- **Home hero** (`index.html`) → `assets/lilian-hero.jpg` (a warm candid photo)
+- **About page** (`about.html`) → `assets/lilian-portrait.jpg` (a clear portrait)
 
-To add a photo:
-1. Put the image in the `assets/` folder (e.g. `assets/lilian-portrait.jpg`).
-2. Replace the `<div class="photo-placeholder">…</div>` block with:
-   ```html
-   <img src="assets/lilian-portrait.jpg" alt="Dr. Lilian Ugwu" />
-   ```
+Until those files exist, a soft placeholder is shown instead — nothing breaks.
+(JPG or PNG both work; if you use PNG, change the `.jpg` in the filename to `.png`
+inside the `<img src="…">` tag on that page.)
 
 ### 2. Connect the booking calendar  ← needed
 `booking.html` has a placeholder where a **Calendly / Acuity** calendar will go.
@@ -74,14 +72,28 @@ The **Contact** and **Booking** forms are pre-wired for the free
 
 Until this is done, the forms show a friendly "email us directly" message.
 
-### 4. Real details to confirm
-- **Email** — the placeholder is `hello@clearpathmentorship.com`. Replace it
-  everywhere with Dr. Ugwu's real address (find-and-replace across all files).
+### 4. Real details
+- **Email** — set to `lily@clearpam.com` (already applied across the site). See
+  "Email setup" below for making that address deliver to a Gmail inbox.
 - **Phone** — set to `+1 (619) 792-3662` (already applied).
 - **Social links** — the footer `href="#"` links (Instagram / LinkedIn / Facebook)
   point nowhere yet; add her real profiles or remove the ones she doesn't use.
 - **Testimonials** — replace the sample quotes on the Home page with real client
   feedback (with permission).
+
+### 5. Domain & email setup (needs accounts — not code)
+- **Custom domain (`clearpathmentorship.com`)** — the website files are ready; to
+  put them at that address you buy the domain (Namecheap, Cloudflare, Google
+  Domains, etc.) and point it at your host (GitHub Pages or Netlify — see below).
+  The preview link is a temporary address, not the final domain.
+- **Making `lily@clearpam.com` arrive in Gmail** — the address lives on the
+  `clearpam.com` domain, so you first need email hosting for that domain (e.g.
+  Google Workspace, Zoho Mail free tier, or your registrar's email + forwarding).
+  Then set up **forwarding** so every message to `lily@clearpam.com` is copied to
+  `uchenna.ogbu@gmail.com`. Optionally add it in Gmail under
+  *Settings → Accounts → "Send mail as"* so she can also reply as
+  `lily@clearpam.com` from Gmail. (Her personal Gmail is kept private — it is only
+  the forwarding destination and never shown on the website.)
 
 ---
 

@@ -57,8 +57,11 @@
 
         <div class="reveal">
           <div class="photo-frame">
-            <!-- PHOTO: replace this placeholder with a warm candid photo of Dr. Ugwu.
-                 e.g. <img src="assets/lilian-hero.jpg" alt="Dr. Lilian Ugwu" /> -->
+            <!-- PHOTO: drop a warm photo of Dr. Ugwu at assets/lilian-hero.jpg and it appears automatically.
+                 Until the file exists, the placeholder below is shown instead. -->
+            <img src="assets/lilian-hero.jpg" alt="Dr. Lilian Ugwu"
+                 onload="this.nextElementSibling.style.display='none'"
+                 onerror="this.style.display='none'" />
             <div class="photo-placeholder">
               <span class="pp-initials">Dr. LU</span>
               <span class="pp-note">A warm photo of Dr. Lilian Ugwu will go here.</span>
@@ -211,7 +214,7 @@
       <div class="footer-col">
         <h4>Get in touch</h4>
         <ul>
-          <li><a href="mailto:hello@clearpathmentorship.com">hello@clearpathmentorship.com</a></li>
+          <li><a href="mailto:lily@clearpam.com">lily@clearpam.com</a></li>
           <li><a href="tel:+16197923662">+1 (619) 792-3662</a></li>
           <li><a href="contact.html">Contact page →</a></li>
         </ul>

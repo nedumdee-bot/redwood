@@ -173,6 +173,7 @@ p  { margin: 0 0 1rem; }
   border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg);
   border: 1px solid var(--line); background: var(--surface);
 }
+.photo-frame img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; }
 .photo-placeholder {
   aspect-ratio: 4/5;
   display: grid; place-items: center; text-align: center; gap: .5rem;
