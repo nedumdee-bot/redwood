@@ -129,6 +129,9 @@ p  { margin: 0 0 1rem; }
 }
 .nav-links a:hover { color: var(--ink); background: var(--surface-2); }
 .nav-links a.active { color: var(--primary); font-weight: 600; }
+/* Keep the CTA button readable — override the generic nav-link text/hover styles */
+.nav-links .btn--primary { color: #fff; padding: .7rem 1.3rem; }
+.nav-links .btn--primary:hover { color: #fff; background: var(--primary-dk); }
 .nav-cta { margin-left: .3rem; }
 .nav-toggle {
   display: none; background: none; border: 1.5px solid var(--line);
