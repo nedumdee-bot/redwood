@@ -7,17 +7,17 @@
 
 /* ---------- Design tokens ---------- */
 :root {
-  /* Brand colors — calming blues, greens & soft neutrals */
-  --ink:        #21323a;   /* main text (deep slate) */
-  --ink-soft:   #566a72;   /* secondary text */
-  --primary:    #2c6e8f;   /* calm blue-teal (buttons, links) */
-  --primary-dk: #235870;   /* hover state */
-  --accent:     #6a9d80;   /* soft sage green */
-  --accent-dk:  #517f66;
-  --bg:         #f4f8f8;   /* page background (soft cool neutral) */
+  /* Brand colors — warm plum & apricot on soft blush */
+  --ink:        #2e2530;   /* main text (deep plum-ink) */
+  --ink-soft:   #6a5f6b;   /* secondary text */
+  --primary:    #7a4f86;   /* rich plum (buttons, links) */
+  --primary-dk: #5f3d69;   /* hover state */
+  --accent:     #e0966a;   /* warm apricot */
+  --accent-dk:  #c4744a;
+  --bg:         #faf5f7;   /* page background (soft blush) */
   --surface:    #ffffff;   /* cards */
-  --surface-2:  #e8f1f0;   /* subtle panels */
-  --line:       #d8e5e4;   /* borders */
+  --surface-2:  #f3e9ef;   /* subtle panels */
+  --line:       #e9dee6;   /* borders */
   --success:    #3a8f6b;
   --danger:     #b4432f;
 
@@ -98,8 +98,8 @@ p  { margin: 0 0 1rem; }
 .btn:active { transform: translateY(1px); }
 .btn--primary { background: var(--primary); color: #fff; box-shadow: var(--shadow); }
 .btn--primary:hover { background: var(--primary-dk); color: #fff; }
-.btn--accent { background: var(--accent); color: #0f2419; }
-.btn--accent:hover { background: var(--accent-dk); color: #0f2419; }
+.btn--accent { background: var(--accent); color: #3a241c; }
+.btn--accent:hover { background: var(--accent-dk); color: #3a241c; }
 .btn--ghost { background: transparent; color: var(--ink); border-color: var(--line); }
 .btn--ghost:hover { border-color: var(--primary); color: var(--primary); }
 .btn--block { width: 100%; justify-content: center; }
@@ -329,7 +329,7 @@ p  { margin: 0 0 1rem; }
 .footer-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; font-size: .95rem; }
 .social { display: flex; gap: .6rem; margin-top: 1rem; }
 .social a { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; background: rgba(255,255,255,.08); color: #fff; }
-.social a:hover { background: var(--accent); color: #0f2419; }
+.social a:hover { background: var(--accent); color: #3a241c; }
 .footer-base { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.12); font-size: .88rem; color: #93a3a5; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; }
 .footer-base a { color: #93a3a5; }
 .footer-base a:hover { color: #fff; }
