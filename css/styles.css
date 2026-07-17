@@ -7,17 +7,18 @@
 
 /* ---------- Design tokens ---------- */
 :root {
-  /* Brand colors — warm plum & apricot on soft blush */
+  /* Brand colors — rich plum & warm metallic rose gold */
   --ink:        #2e2530;   /* main text (deep plum-ink) */
   --ink-soft:   #6a5f6b;   /* secondary text */
   --primary:    #7a4f86;   /* rich plum (buttons, links) */
   --primary-dk: #5f3d69;   /* hover state */
-  --accent:     #e0966a;   /* warm apricot */
-  --accent-dk:  #c4744a;
-  --bg:         #faf5f7;   /* page background (soft blush) */
+  --accent:     #cf9270;   /* warm metallic rose gold */
+  --accent-dk:  #ab6a4a;   /* deeper rose gold (text/eyebrows) */
+  --accent-lt:  #e7c3a2;   /* light rose gold (sheen highlight) */
+  --bg:         #faf5f1;   /* page background (warm blush) */
   --surface:    #ffffff;   /* cards */
-  --surface-2:  #f3e9ef;   /* subtle panels */
-  --line:       #e9dee6;   /* borders */
+  --surface-2:  #f4ebe2;   /* subtle panels */
+  --line:       #ece0d5;   /* borders */
   --success:    #3a8f6b;
   --danger:     #b4432f;
 
@@ -194,7 +195,8 @@ p  { margin: 0 0 1rem; }
 .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 .card .icon {
   width: 50px; height: 50px; border-radius: 13px; display: grid; place-items: center;
-  background: color-mix(in srgb, var(--accent) 16%, #fff); color: var(--accent-dk);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-lt) 55%, #fff), color-mix(in srgb, var(--accent) 30%, #fff));
+  color: var(--accent-dk);
   margin-bottom: 1rem;
 }
 .card .icon svg { width: 24px; height: 24px; }
@@ -307,7 +309,7 @@ p  { margin: 0 0 1rem; }
 /* ---------- Contact info list ---------- */
 .info-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
 .info-list li { display: flex; gap: .9rem; align-items: flex-start; }
-.info-list .icon { flex: none; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: color-mix(in srgb, var(--accent) 16%, #fff); color: var(--accent-dk); }
+.info-list .icon { flex: none; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: linear-gradient(135deg, color-mix(in srgb, var(--accent-lt) 55%, #fff), color-mix(in srgb, var(--accent) 30%, #fff)); color: var(--accent-dk); }
 .info-list .icon svg { width: 22px; height: 22px; }
 .info-list b { display: block; font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); font-weight: 700; }
 .info-list a, .info-list span { font-size: 1.05rem; color: var(--ink); }
