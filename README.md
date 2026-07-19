@@ -1,12 +1,12 @@
 # Clear Path Coaching — Website
 
 A calm, professional website for **Clear Path Coaching** — the counseling &
-coaching practice of **Dr. Lilian Ugwu**. Tagline: *Support. Growth. Clarity.*
+coaching practice of **Lilian Ugwu**. Tagline: *Support. Growth. Clarity.*
 
 It's built with plain **HTML, CSS, and JavaScript** — no frameworks, no build
 step. That means it's free to host, easy to edit, and will keep working for years.
 
-> **A note on content:** Dr. Ugwu's photos are in place. Real client testimonials
+> **A note on content:** Lilian Ugwu's photos are in place. Real client testimonials
 > and her booking-calendar link still need to be added — see
 > **[To finish before launch](#to-finish-before-launch)**.
 
@@ -17,7 +17,7 @@ step. That means it's free to host, easy to edit, and will keep working for year
 | File | What it is |
 |------|------------|
 | `index.html` | Home — welcome, services overview, approach, testimonials |
-| `about.html` | About Dr. Lilian Ugwu — bio, approach, what to expect |
+| `about.html` | About Lilian Ugwu — bio, approach, what to expect |
 | `services.html` | Services — counseling, coaching, workshops, consultations + FAQ |
 | `plans.html` | Subscription plans ($0 / $49 / $99 / $199) and one-time add-ons |
 | `booking.html` | Booking — Calendly placeholder + a working request form |
@@ -46,7 +46,7 @@ python3 -m http.server 8000
 ## To finish before launch
 
 ### 1. Photos  ✓ done
-Dr. Ugwu's photos are in the `assets/` folder and already showing on the site:
+Lilian Ugwu's photos are in the `assets/` folder and already showing on the site:
 - **Home hero** (`index.html`) → `assets/lilian-hero.jpg`
 - **About page** (`about.html`) → `assets/lilian-portrait.jpg`
 
@@ -54,7 +54,7 @@ To swap in a different photo later, just replace the file of the same name.
 
 ### 2. Connect the booking calendar  ← needed
 `booking.html` has a placeholder where a **Calendly / Acuity** calendar will go.
-When Dr. Ugwu shares her booking link, replace the `calendar-embed` block with the
+When Lilian Ugwu shares her booking link, replace the `calendar-embed` block with the
 embed code from her account (there are step-by-step comments in the file). Until
 then, the request form below it works immediately.
 
@@ -124,7 +124,7 @@ site updates itself whenever the repo changes.
 4. You get a URL like `random-name.netlify.app` in ~30 seconds. Rename it under
    **Site configuration → Change site name**.
 
-### Adding Dr. Ugwu's photos (no coding)
+### Adding Lilian Ugwu's photos (no coding)
 Once connected, add the two photos straight from GitHub's website:
 1. On the repo, open the **`assets`** folder → **Add file → Upload files**.
 2. Drag in the two images, named exactly `lilian-portrait.jpg` and
@@ -149,4 +149,4 @@ at `https://<username>.github.io/redwood/`.
 - Respects "reduce motion" system settings.
 - Includes a clear safety disclaimer (counseling/coaching is not emergency care).
 
-With warmth — good luck to Dr. Ugwu and Clear Path Coaching. 🌿
+With warmth — good luck to Lilian Ugwu and Clear Path Coaching. 🌿
