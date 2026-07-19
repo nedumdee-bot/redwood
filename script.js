@@ -46,6 +46,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Gallery category filtering
+  const filters = document.getElementById('galleryFilters');
+  const grid = document.getElementById('galleryGrid');
+  if (filters && grid) {
+    const items = Array.from(grid.querySelectorAll('.gallery-item'));
+    filters.addEventListener('click', (e) => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      const filter = btn.dataset.filter;
+
+      filters.querySelectorAll('.filter-btn').forEach((b) => {
+        const active = b === btn;
+        b.classList.toggle('is-active', active);
+        b.setAttribute('aria-selected', String(active));
+      });
+
+      items.forEach((item) => {
+        const show = filter === 'all' || item.dataset.category === filter;
+        item.classList.toggle('is-hidden', !show);
+        if (show) {
+          // restart the fade-in animation
+          item.style.animation = 'none';
+          void item.offsetWidth;
+          item.style.animation = '';
+        }
+      });
+    });
+  }
+
   // Reveal-on-scroll for cards & sections
   const revealTargets = document.querySelectorAll(
     '.service-card, .about-text, .about-visual, .gallery-item, .section-head, .contact-form'
