@@ -1,7 +1,6 @@
 # Clear Path Coaching — Website
 
-A calm, professional website for **Clear Path Coaching** — the counseling &
-coaching practice of **Lilian Ugwu**. Tagline: *Support. Growth. Clarity.*
+A calm, professional website for **Clear Path Coaching** — the coaching practice of **Lilian Ugwu**. Tagline: *Support. Growth. Clarity.*
 
 It's built with plain **HTML, CSS, and JavaScript** — no frameworks, no build
 step. That means it's free to host, easy to edit, and will keep working for years.
@@ -18,7 +17,7 @@ step. That means it's free to host, easy to edit, and will keep working for year
 |------|------------|
 | `index.html` | Home — welcome, services overview, approach, testimonials |
 | `about.html` | About Lilian Ugwu — bio, approach, what to expect |
-| `services.html` | Services — counseling, coaching, workshops, consultations + FAQ |
+| `services.html` | Services — coaching, workshops, consultations + FAQ |
 | `plans.html` | Subscription plans ($0 / $49 / $99 / $199) and one-time add-ons |
 | `booking.html` | Booking — Calendly placeholder + a working request form |
 | `contact.html` | Contact form + email/phone/hours + safety disclaimer |
@@ -147,6 +146,6 @@ at `https://<username>.github.io/redwood/`.
 - Responsive on phones, tablets, and desktops.
 - Keyboard-navigable, with visible focus outlines and screen-reader labels.
 - Respects "reduce motion" system settings.
-- Includes a clear safety disclaimer (counseling/coaching is not emergency care).
+- Includes a clear safety disclaimer (coaching is not a substitute for therapy or emergency care).
 
 With warmth — good luck to Lilian Ugwu and Clear Path Coaching. 🌿
