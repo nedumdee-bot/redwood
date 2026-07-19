@@ -1,6 +1,6 @@
-# Clear Path Coaching — Website
+# Talk 2 Lilian — Website
 
-A calm, professional website for **Clear Path Coaching** — the coaching practice of **Lilian Ugwu**. Tagline: *Support. Growth. Clarity.*
+A calm, professional website for **Talk 2 Lilian** — the coaching practice of **Lilian Ugwu**. Tagline: *Support. Growth. Clarity.*
 
 It's built with plain **HTML, CSS, and JavaScript** — no frameworks, no build
 step. That means it's free to host, easy to edit, and will keep working for years.
@@ -62,7 +62,7 @@ emailed to whatever inbox is set on that Formspree form. To change the destinati
 update it in the Formspree dashboard.
 
 ### 4. Real details
-- **Email** — set to `hello@clearpathcoaching.com` (already applied across the site). See
+- **Email** — set to `hello@talk2lilian.com` (already applied across the site). See
   "Email setup" below for making that address deliver to a Gmail inbox.
 - **Phone** — set to `+1 (619) 792-3662` (already applied).
 - **Social links** — the footer `href="#"` links (Instagram / LinkedIn / Facebook)
@@ -71,17 +71,17 @@ update it in the Formspree dashboard.
   feedback (with permission).
 
 ### 5. Domain & email setup (needs accounts — not code)
-- **Custom domain (`clearpathcoaching.com`)** — the website files are ready; to
+- **Custom domain (`talk2lilian.com`)** — the website files are ready; to
   put them at that address you buy the domain (Namecheap, Cloudflare, Google
   Domains, etc.) and point it at your host (GitHub Pages or Netlify — see below).
   The preview link is a temporary address, not the final domain.
-- **Making `hello@clearpathcoaching.com` arrive in Gmail** — the address lives on the
-  `clearpathcoaching.com` domain, so you first need email hosting for that domain (e.g.
+- **Making `hello@talk2lilian.com` arrive in Gmail** — the address lives on the
+  `talk2lilian.com` domain, so you first need email hosting for that domain (e.g.
   Google Workspace, Zoho Mail free tier, or your registrar's email + forwarding).
-  Then set up **forwarding** so every message to `hello@clearpathcoaching.com` is copied to
+  Then set up **forwarding** so every message to `hello@talk2lilian.com` is copied to
   `uchenna.ogbu@gmail.com`. Optionally add it in Gmail under
   *Settings → Accounts → "Send mail as"* so she can also reply as
-  `hello@clearpathcoaching.com` from Gmail. (Her personal Gmail is kept private — it is only
+  `hello@talk2lilian.com` from Gmail. (Her personal Gmail is kept private — it is only
   the forwarding destination and never shown on the website.)
 
 ---
@@ -123,7 +123,7 @@ Once connected, add the two photos straight from GitHub's website:
    `lilian-hero.jpg`, and click **Commit changes**.
 3. Netlify rebuilds automatically and the photos appear on the site.
 
-### The custom domain (`clearpathcoaching.com`)
+### The custom domain (`talk2lilian.com`)
 Buy the domain at any registrar, then in Netlify go to **Domain management → Add a
 domain** and follow the DNS steps. Netlify provides free HTTPS automatically.
 
@@ -141,4 +141,4 @@ at `https://<username>.github.io/redwood/`.
 - Respects "reduce motion" system settings.
 - Includes a clear safety disclaimer (coaching is not a substitute for therapy or emergency care).
 
-With warmth — good luck to Lilian Ugwu and Clear Path Coaching. 🌿
+With warmth — good luck to Lilian Ugwu and Talk 2 Lilian. 🌿
