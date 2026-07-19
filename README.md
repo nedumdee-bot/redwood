@@ -56,16 +56,10 @@ To swap in a different photo later, just replace the file of the same name.
 time, and the details are emailed to Lilian (once the form is connected in step 3).
 No calendar tool or account is required.
 
-### 3. Make the forms send email  ← needed
-The **Contact** and **Booking** forms are pre-wired for the free
-[Formspree](https://formspree.io) service:
-1. Sign up at [formspree.io](https://formspree.io) with the email that should
-   **receive** enquiries.
-2. Create a form; Formspree gives you an endpoint like `https://formspree.io/f/abcdwxyz`.
-3. In `contact.html` and `booking.html`, find `data-endpoint="https://formspree.io/f/YOUR_FORM_ID"`
-   and replace `YOUR_FORM_ID` with your real code.
-
-Until this is done, the forms show a friendly "email us directly" message.
+### 3. Forms  ✓ connected
+The Contact and Booking forms POST to Formspree (form `xgogkjlk`). Submissions are
+emailed to whatever inbox is set on that Formspree form. To change the destination,
+update it in the Formspree dashboard.
 
 ### 4. Real details
 - **Email** — set to `hello@clearpathcoaching.com` (already applied across the site). See
