@@ -1,7 +1,7 @@
-# Clear Path Mentorship — Website
+# Clear Path Coaching — Website
 
-A calm, professional website for **Clear Path Mentorship** — the counseling &
-mentorship practice of **Dr. Lilian Ugwu**. Tagline: *Support. Growth. Clarity.*
+A calm, professional website for **Clear Path Coaching** — the counseling &
+coaching practice of **Dr. Lilian Ugwu**. Tagline: *Support. Growth. Clarity.*
 
 It's built with plain **HTML, CSS, and JavaScript** — no frameworks, no build
 step. That means it's free to host, easy to edit, and will keep working for years.
@@ -18,7 +18,7 @@ step. That means it's free to host, easy to edit, and will keep working for year
 |------|------------|
 | `index.html` | Home — welcome, services overview, approach, testimonials |
 | `about.html` | About Dr. Lilian Ugwu — bio, approach, what to expect |
-| `services.html` | Services — counseling, mentorship, workshops, consultations + FAQ |
+| `services.html` | Services — counseling, coaching, workshops, consultations + FAQ |
 | `plans.html` | Subscription plans ($0 / $49 / $99 / $199) and one-time add-ons |
 | `booking.html` | Booking — Calendly placeholder + a working request form |
 | `contact.html` | Contact form + email/phone/hours + safety disclaimer |
@@ -70,7 +70,7 @@ The **Contact** and **Booking** forms are pre-wired for the free
 Until this is done, the forms show a friendly "email us directly" message.
 
 ### 4. Real details
-- **Email** — set to `hello@clearpathmentorship.com` (already applied across the site). See
+- **Email** — set to `hello@clearpathcoaching.com` (already applied across the site). See
   "Email setup" below for making that address deliver to a Gmail inbox.
 - **Phone** — set to `+1 (619) 792-3662` (already applied).
 - **Social links** — the footer `href="#"` links (Instagram / LinkedIn / Facebook)
@@ -79,17 +79,17 @@ Until this is done, the forms show a friendly "email us directly" message.
   feedback (with permission).
 
 ### 5. Domain & email setup (needs accounts — not code)
-- **Custom domain (`clearpathmentorship.com`)** — the website files are ready; to
+- **Custom domain (`clearpathcoaching.com`)** — the website files are ready; to
   put them at that address you buy the domain (Namecheap, Cloudflare, Google
   Domains, etc.) and point it at your host (GitHub Pages or Netlify — see below).
   The preview link is a temporary address, not the final domain.
-- **Making `hello@clearpathmentorship.com` arrive in Gmail** — the address lives on the
-  `clearpathmentorship.com` domain, so you first need email hosting for that domain (e.g.
+- **Making `hello@clearpathcoaching.com` arrive in Gmail** — the address lives on the
+  `clearpathcoaching.com` domain, so you first need email hosting for that domain (e.g.
   Google Workspace, Zoho Mail free tier, or your registrar's email + forwarding).
-  Then set up **forwarding** so every message to `hello@clearpathmentorship.com` is copied to
+  Then set up **forwarding** so every message to `hello@clearpathcoaching.com` is copied to
   `uchenna.ogbu@gmail.com`. Optionally add it in Gmail under
   *Settings → Accounts → "Send mail as"* so she can also reply as
-  `hello@clearpathmentorship.com` from Gmail. (Her personal Gmail is kept private — it is only
+  `hello@clearpathcoaching.com` from Gmail. (Her personal Gmail is kept private — it is only
   the forwarding destination and never shown on the website.)
 
 ---
@@ -131,7 +131,7 @@ Once connected, add the two photos straight from GitHub's website:
    `lilian-hero.jpg`, and click **Commit changes**.
 3. Netlify rebuilds automatically and the photos appear on the site.
 
-### The custom domain (`clearpathmentorship.com`)
+### The custom domain (`clearpathcoaching.com`)
 Buy the domain at any registrar, then in Netlify go to **Domain management → Add a
 domain** and follow the DNS steps. Netlify provides free HTTPS automatically.
 
@@ -147,6 +147,6 @@ at `https://<username>.github.io/redwood/`.
 - Responsive on phones, tablets, and desktops.
 - Keyboard-navigable, with visible focus outlines and screen-reader labels.
 - Respects "reduce motion" system settings.
-- Includes a clear safety disclaimer (counseling/mentorship is not emergency care).
+- Includes a clear safety disclaimer (counseling/coaching is not emergency care).
 
-With warmth — good luck to Dr. Ugwu and Clear Path Mentorship. 🌿
+With warmth — good luck to Dr. Ugwu and Clear Path Coaching. 🌿

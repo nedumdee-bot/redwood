@@ -1,5 +1,5 @@
 /* =========================================================
-   Clear Path Mentorship — Site scripts
+   Clear Path Coaching — Site scripts
    Plain vanilla JS, no dependencies.
    ========================================================= */
 (function () {
@@ -74,7 +74,7 @@
       if (notConnected) {
         showStatus(status, "err",
           "This form isn’t connected to email yet. Please reach us directly at " +
-          "<a href=\"mailto:hello@clearpathmentorship.com\">hello@clearpathmentorship.com</a> " +
+          "<a href=\"mailto:hello@clearpathcoaching.com\">hello@clearpathcoaching.com</a> " +
           "or call (555) 012-3456. (Site owner: see README to connect the form.)");
         return;
       }
@@ -103,7 +103,7 @@
         .catch(function () {
           showStatus(status, "err",
             "Sorry, something went wrong. Please email us at " +
-            "<a href=\"mailto:hello@clearpathmentorship.com\">hello@clearpathmentorship.com</a>.");
+            "<a href=\"mailto:hello@clearpathcoaching.com\">hello@clearpathcoaching.com</a>.");
         })
         .finally(function () {
           if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = original; }
