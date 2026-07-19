@@ -19,7 +19,7 @@ step. That means it's free to host, easy to edit, and will keep working for year
 | `about.html` | About Lilian Ugwu — bio, approach, what to expect |
 | `services.html` | Services — coaching, workshops, consultations + FAQ |
 | `plans.html` | Subscription plans ($0 / $49 / $99 / $199) and one-time add-ons |
-| `booking.html` | Booking — Calendly placeholder + a working request form |
+| `booking.html` | Booking — a request form that emails Lilian |
 | `contact.html` | Contact form + email/phone/hours + safety disclaimer |
 | `404.html` | Friendly "page not found" page |
 | `css/styles.css` | All styling — re-theme via the variables at the top |
@@ -51,11 +51,10 @@ Lilian Ugwu's photos are in the `assets/` folder and already showing on the site
 
 To swap in a different photo later, just replace the file of the same name.
 
-### 2. Connect the booking calendar  ← needed
-`booking.html` has a placeholder where a **Calendly / Acuity** calendar will go.
-When Lilian Ugwu shares her booking link, replace the `calendar-embed` block with the
-embed code from her account (there are step-by-step comments in the file). Until
-then, the request form below it works immediately.
+### 2. Booking  ✓ done
+`booking.html` uses a simple **request form** — clients pick a service, date, and
+time, and the details are emailed to Lilian (once the form is connected in step 3).
+No calendar tool or account is required.
 
 ### 3. Make the forms send email  ← needed
 The **Contact** and **Booking** forms are pre-wired for the free
