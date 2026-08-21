@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Danthon &amp; Co. — Strategy. Technology. Delivery.</title>
+<meta name="description" content="Danthon &amp; Co. partners with leadership teams to translate strategy into technology and technology into delivered outcomes — end to end, without the handoffs.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap');
 
@@ -40,8 +41,9 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .brand-wordmark{font-family:'Playfair Display',serif;font-weight:600;font-size:1.3rem;letter-spacing:0.01em;color:var(--navy);}
 .brand-wordmark span{color:var(--gold-deep);font-style:italic;margin:0 4px;}
 .nav-links{display:flex;gap:36px;font-size:0.88rem;letter-spacing:0.02em;}
-.nav-links a{color:var(--navy-soft);transition:color .2s;}
+.nav-links a{color:var(--navy-soft);transition:color .2s;padding-bottom:4px;border-bottom:1px solid transparent;}
 .nav-links a:hover{color:var(--navy);}
+.nav-links a.active{color:var(--navy);border-bottom-color:var(--gold);}
 .nav-cta{border:1px solid var(--gold);color:var(--gold-deep);padding:9px 20px;border-radius:2px;font-size:0.82rem;letter-spacing:0.03em;transition:background .2s,color .2s;}
 .nav-cta:hover{background:var(--gold);color:#fff;}
 @media(max-width:760px){.nav-links{display:none;}}
@@ -54,7 +56,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .hero h1 em{color:var(--gold-deep);font-style:italic;}
 .hero-sub{margin-top:24px;max-width:46ch;font-size:1.06rem;line-height:1.65;color:var(--muted);}
 .hero-ctas{margin-top:38px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
-.btn-primary{background:var(--gold);color:#fff;padding:14px 28px;font-weight:700;font-size:0.9rem;letter-spacing:0.02em;border-radius:2px;display:inline-block;transition:transform .2s,box-shadow .2s,background .2s;}
+.btn-primary{background:var(--gold);color:#fff;padding:14px 28px;font-weight:700;font-size:0.9rem;letter-spacing:0.02em;border-radius:2px;display:inline-block;transition:transform .2s,box-shadow .2s,background .2s;border:none;cursor:pointer;font-family:inherit;}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px -12px rgba(178,124,62,0.5);background:var(--gold-deep);}
 .btn-ghost{color:var(--navy);font-size:0.9rem;border-bottom:1px solid var(--line);padding-bottom:2px;}
 .btn-ghost:hover{border-color:var(--navy-soft);}
@@ -85,7 +87,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .icon-circle svg{width:26px;height:26px;stroke:var(--gold);}
 .card-name{font-family:'DM Sans',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:10px;letter-spacing:0.01em;}
 .card-desc{color:var(--muted);font-size:0.88rem;line-height:1.6;margin-bottom:22px;flex-grow:1;}
-.card-link{color:var(--gold-deep);font-size:0.83rem;letter-spacing:0.02em;display:inline-flex;align-items:center;gap:8px;padding-top:14px;border-top:1px solid var(--line);transition:gap .2s;}
+.card-link{color:var(--gold-deep);font-size:0.83rem;letter-spacing:0.02em;display:inline-flex;align-items:center;gap:8px;padding-top:14px;border-top:1px solid var(--line);transition:gap .2s;background:none;border-left:none;border-right:none;border-bottom:none;}
 .card-link:hover{gap:12px;}
 @media(max-width:840px){.services-grid{grid-template-columns:1fr;}}
 
@@ -135,6 +137,7 @@ footer .fine{color:var(--muted);font-size:0.8rem;font-family:'DM Mono',monospace
 /* SERVICE DETAIL PAGES */
 .breadcrumb{font-family:'DM Mono',monospace;font-size:0.78rem;color:var(--muted);margin-bottom:28px;}
 .breadcrumb a{color:var(--gold-deep);}
+.breadcrumb a:hover{text-decoration:underline;}
 .service-hero{padding:64px 0 70px;border-bottom:1px solid var(--line);}
 .service-hero .pkg-bars{height:34px;margin-bottom:24px;}
 .service-hero .pkg-bars i{flex:0 0 8px;}
@@ -153,6 +156,17 @@ footer .fine{color:var(--muted);font-size:0.8rem;font-family:'DM Mono',monospace
 .side-panel .btn-primary{width:100%;text-align:center;}
 @media(max-width:840px){.detail-grid{grid-template-columns:1fr;gap:48px;}}
 
+/* CONTACT PAGE */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.contact-block h2{font-size:1.6rem;margin-bottom:16px;}
+.contact-block p{color:var(--muted);font-size:0.97rem;line-height:1.7;margin-bottom:14px;max-width:52ch;}
+.contact-channels{list-style:none;margin-top:28px;}
+.contact-channels li{padding:18px 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:4px;}
+.contact-channels li:last-child{border-bottom:1px solid var(--line);}
+.contact-channels .label{font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-deep);}
+.contact-channels .value{font-size:1.02rem;color:var(--navy);}
+.contact-channels a.value:hover{color:var(--gold-deep);}
+@media(max-width:840px){.contact-grid{grid-template-columns:1fr;gap:48px;}}
 
 .page{display:none;}
 .page.active{display:block;}
@@ -163,17 +177,19 @@ footer .fine{color:var(--muted);font-size:0.8rem;font-family:'DM Mono',monospace
 
 <nav>
   <div class="wrap">
-    <a href="#/home" class="brand-wordmark">Danthon<span>&amp;</span>Co.</a>
-    <div class="nav-links">
-      <a href="#/home">Home</a>
-      <a href="#/strategy">Strategy</a>
-      <a href="#/technology">Technology</a>
-      <a href="#/delivery">Delivery</a>
+    <a href="#/home" class="brand"><span class="brand-wordmark">Danthon<span>&amp;</span>Co.</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="#/home" data-nav="home">Home</a>
+      <a href="#/strategy" data-nav="strategy">Strategy</a>
+      <a href="#/technology" data-nav="technology">Technology</a>
+      <a href="#/delivery" data-nav="delivery">Delivery</a>
     </div>
     <a href="#/contact" class="nav-cta">Get in touch</a>
   </div>
 </nav>
 
+<!-- HOME -->
+<div id="page-home" class="page">
 <main class="wrap hero">
   <div class="eyebrow">Strategy · Technology · Delivery</div>
   <h1>We help ambitious teams build what's <em>next</em>.</h1>
@@ -259,6 +275,102 @@ footer .fine{color:var(--muted);font-size:0.8rem;font-family:'DM Mono',monospace
   <p>Tell us where you're headed. We'll tell you honestly whether we're the right partner to get you there.</p>
   <a href="#/contact" class="btn-primary">Get in touch</a>
 </section>
+</div>
+
+<!-- PILLAR PAGES (Strategy, Technology, Delivery) render here -->
+<div id="page-pillar" class="page">
+  <div class="wrap" style="padding-top:40px;">
+    <div class="breadcrumb" id="pillar-breadcrumb"></div>
+  </div>
+  <div class="service-hero">
+    <div class="wrap">
+      <div class="eyebrow" id="pillar-eyebrow"></div>
+      <h1 id="pillar-title"></h1>
+      <p class="hero-sub" id="pillar-summary"></p>
+    </div>
+  </div>
+  <div class="tagline-strip" id="pillar-tagline"></div>
+  <section class="section" style="border-top:none;padding-top:20px;">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-label">Services</div>
+          <h2>Where we can help.</h2>
+        </div>
+      </div>
+      <div class="subservice-list" id="pillar-subservices"></div>
+    </div>
+  </section>
+  <section class="cta-strip">
+    <h2>Not sure where to start?</h2>
+    <p>Tell us what you're working on and we'll point you to the right service — or tell you plainly if we're not the right fit.</p>
+    <a href="#/contact" class="btn-primary">Get in touch</a>
+  </section>
+</div>
+
+<!-- SERVICE DETAIL PAGES render here -->
+<div id="page-detail" class="page">
+  <div class="wrap" style="padding-top:40px;">
+    <div class="breadcrumb" id="detail-breadcrumb"></div>
+  </div>
+  <div class="service-hero">
+    <div class="wrap">
+      <div class="eyebrow" id="detail-eyebrow"></div>
+      <h1 id="detail-title"></h1>
+      <p class="hero-sub" id="detail-summary"></p>
+    </div>
+  </div>
+  <section class="section" style="border-top:none;">
+    <div class="wrap detail-grid">
+      <div class="detail-block">
+        <h2>What's included</h2>
+        <p id="detail-description"></p>
+        <ul class="included-list" id="detail-included"></ul>
+      </div>
+      <div class="side-panel">
+        <h3>Ready to talk?</h3>
+        <p>Tell us about your situation and we'll come back with an honest read on scope, timeline, and fit — no obligation.</p>
+        <a href="#/contact" class="btn-primary">Get in touch</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT -->
+<div id="page-contact" class="page">
+  <div class="wrap" style="padding-top:40px;">
+    <div class="breadcrumb"><a href="#/home">Home</a> / Contact</div>
+  </div>
+  <section class="section" style="border-top:none;padding-top:24px;">
+    <div class="wrap contact-grid">
+      <div class="contact-block">
+        <div class="eyebrow">Get in touch</div>
+        <h2>Let's talk about what's next.</h2>
+        <p>Tell us where you're headed — strategy, technology, delivery, or all three — and we'll get back to you within one business day with an honest read on whether we're the right partner.</p>
+        <p>No sales pitch on the first call. Just a straight conversation about your situation.</p>
+      </div>
+      <div>
+        <ul class="contact-channels">
+          <li>
+            <span class="label">Email</span>
+            <a class="value" href="mailto:hello@danthonandco.com">hello@danthonandco.com</a>
+          </li>
+          <li>
+            <span class="label">Response time</span>
+            <span class="value">Within one business day</span>
+          </li>
+          <li>
+            <span class="label">Based in</span>
+            <span class="value">Lagos, Nigeria — working with clients worldwide</span>
+          </li>
+        </ul>
+        <div style="margin-top:28px;">
+          <a href="mailto:hello@danthonandco.com?subject=Let%27s%20talk" class="btn-primary">Email us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
 <footer>
   <div class="wrap foot-wrap">
@@ -266,6 +378,162 @@ footer .fine{color:var(--muted);font-size:0.8rem;font-family:'DM Mono',monospace
     <div class="fine">© 2026 Danthon &amp; Co. All rights reserved.</div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var ICONS = {
+    compass: '<path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z"/><path d="m16 8-2 6-6 2 2-6 6-2Z"/>',
+    layers: '<path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/>',
+    users: '<path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+    code: '<path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/>',
+    cloud: '<path d="M17.5 19H9a7 7 0 1 1 6.71-9h.79a4.5 4.5 0 1 1 1 8.9Z"/>',
+    database: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/>',
+    clipboard: '<rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-4"/>',
+    trending: '<path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/>',
+    handshake: '<path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 3 3a1 1 0 0 0 3-3l-3.66-3.66"/><path d="M9 12v-1a2 2 0 0 1 4 0v1"/><path d="M4 10v6a1 1 0 0 0 1 1h1"/><path d="m4 10 5-5 3.5 3.5"/>'
+  };
+  function icon(name){
+    return '<div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+ICONS[name]+'</svg></div>';
+  }
+
+  var SITE = {
+    strategy: {
+      title: 'Strategy',
+      summary: 'Clarify the direction, align the leadership team, and build the roadmap that makes the next decision obvious.',
+      tagline: 'DIRECTION · ALIGNMENT · ROADMAP',
+      services: [
+        { slug:'corporate-digital-strategy', icon:'compass', name:'Corporate &amp; Digital Strategy', summary:'A clear-eyed view of where the business is headed and what has to be true to get there.',
+          description:'We work with your leadership team to set direction, prioritize the bets worth making, and translate ambition into a roadmap the whole organization can act on.',
+          included:['Market and competitive positioning review','Leadership workshops to align on priorities','A prioritized 12–24 month roadmap','Board- and investor-ready strategy narrative'] },
+        { slug:'technology-due-diligence', icon:'layers', name:'Technology Due Diligence', summary:'An honest, outside assessment of your current stack, team, and technical debt.',
+          description:'Before you invest, acquire, or scale, we give you an unvarnished read on what your technology can and can’t support — and what it will cost to fix.',
+          included:['Architecture and codebase review','Team capability and process assessment','Risk register with cost-to-remediate estimates','A findings report written for non-technical stakeholders'] },
+        { slug:'operating-model-design', icon:'users', name:'Operating Model Design', summary:'The org structure, decision rights, and ways of working that let strategy actually happen.',
+          description:'Strategy fails most often at the handoff. We design the operating model — teams, decision rights, cadences — that keeps strategy and execution connected.',
+          included:['Current-state operating model diagnostic','Target team structure and decision rights','Governance and reporting cadence design','Rollout and change plan'] }
+      ]
+    },
+    technology: {
+      title: 'Technology',
+      summary: 'Architecture, platforms, and engineering that turn the roadmap into something real, secure, and built to last.',
+      tagline: 'ARCHITECTURE · ENGINEERING · SCALE',
+      services: [
+        { slug:'product-platform-engineering', icon:'code', name:'Product &amp; Platform Engineering', summary:'Custom software, built by senior engineers, that ships and stays shippable.',
+          description:'We design and build the products and internal platforms your roadmap depends on — with an architecture that won’t need to be rebuilt in eighteen months.',
+          included:['Product and technical architecture design','Full-stack engineering (web, mobile, APIs)','Code and security review of existing systems','Documentation and knowledge transfer to your team'] },
+        { slug:'cloud-infrastructure-modernization', icon:'cloud', name:'Cloud &amp; Infrastructure Modernization', summary:'Migrate, consolidate, and modernize the infrastructure underneath the product.',
+          description:'We take on-premise or aging cloud environments and rebuild them for reliability, cost, and speed — without disrupting the business while we do it.',
+          included:['Cloud migration strategy and execution','Infrastructure-as-code and CI/CD pipelines','Cost optimization and monitoring setup','Security hardening and compliance readiness'] },
+        { slug:'data-ai-enablement', icon:'database', name:'Data &amp; AI Enablement', summary:'Data platforms and applied AI that produce decisions, not just dashboards.',
+          description:'We build the data foundation and the applied AI capabilities on top of it — from a single source of truth to production models your teams actually use.',
+          included:['Data platform and pipeline design','Analytics and reporting infrastructure','Applied AI / LLM feature design and integration','Data governance and access controls'] }
+      ]
+    },
+    delivery: {
+      title: 'Delivery',
+      summary: 'Program management and change enablement that gets the work shipped, adopted, and measured.',
+      tagline: 'PROGRAM MANAGEMENT · ADOPTION · OUTCOMES',
+      services: [
+        { slug:'program-project-management', icon:'clipboard', name:'Program &amp; Project Management', summary:'Experienced program leadership that keeps complex, multi-team work on track.',
+          description:'We run the program management office for your most important initiative — milestones, dependencies, risk, and reporting — so nothing important falls through the cracks.',
+          included:['Program setup: milestones, RAID log, cadences','Cross-team dependency and risk management','Executive-level status reporting','Vendor and third-party coordination'] },
+        { slug:'change-enablement-adoption', icon:'trending', name:'Change Enablement &amp; Adoption', summary:'The training, communication, and support that turn a launch into actual adoption.',
+          description:'A shipped product nobody uses isn’t a delivered outcome. We plan and run the change program that gets your organization to actually adopt what was built.',
+          included:['Stakeholder impact and readiness assessment','Training materials and enablement sessions','Communication and rollout planning','Adoption metrics and post-launch support'] },
+        { slug:'managed-delivery', icon:'handshake', name:'Managed Delivery', summary:'An embedded, outsourced delivery team for ongoing work, not just a single project.',
+          description:'For teams that need sustained delivery capacity, we embed a dedicated squad — engineering, product, and delivery management — as an extension of your team.',
+          included:['Dedicated cross-functional delivery squad','Sprint planning and execution','Direct integration with your existing tools and teams','Flexible scale-up or scale-down as needs change'] }
+      ]
+    }
+  };
+
+  var pageEls = {
+    home: document.getElementById('page-home'),
+    pillar: document.getElementById('page-pillar'),
+    detail: document.getElementById('page-detail'),
+    contact: document.getElementById('page-contact')
+  };
+
+  function showPage(key){
+    Object.keys(pageEls).forEach(function(k){
+      pageEls[k].classList.toggle('active', k === key);
+    });
+  }
+
+  function setActiveNav(section){
+    document.querySelectorAll('#nav-links a').forEach(function(a){
+      a.classList.toggle('active', a.getAttribute('data-nav') === section);
+    });
+  }
+
+  function renderPillar(key){
+    var data = SITE[key];
+    if(!data){ location.hash = '#/home'; return; }
+    document.getElementById('pillar-breadcrumb').innerHTML = '<a href="#/home">Home</a> / ' + data.title;
+    document.getElementById('pillar-eyebrow').textContent = data.title;
+    document.getElementById('pillar-title').textContent = data.title;
+    document.getElementById('pillar-summary').textContent = data.summary;
+    document.getElementById('pillar-tagline').innerHTML =
+      '<div class="rule"></div><span>' + data.tagline + '</span><div class="rule"></div>';
+    var list = document.getElementById('pillar-subservices');
+    list.innerHTML = data.services.map(function(s){
+      return '<a class="subservice-item" href="#/' + key + '/' + s.slug + '">' +
+        icon(s.icon) +
+        '<div class="subservice-text"><h3>' + s.name + '</h3><p>' + s.summary + '</p></div>' +
+        '<div class="subservice-arrow">→</div>' +
+      '</a>';
+    }).join('');
+    setActiveNav(key);
+    showPage('pillar');
+  }
+
+  function renderDetail(key, slug){
+    var data = SITE[key];
+    var service = data && data.services.filter(function(s){ return s.slug === slug; })[0];
+    if(!service){ location.hash = '#/' + key; return; }
+    document.getElementById('detail-breadcrumb').innerHTML =
+      '<a href="#/home">Home</a> / <a href="#/' + key + '">' + data.title + '</a> / ' + service.name;
+    document.getElementById('detail-eyebrow').textContent = data.title;
+    document.getElementById('detail-title').innerHTML = service.name;
+    document.getElementById('detail-summary').textContent = service.summary;
+    document.getElementById('detail-description').textContent = service.description;
+    document.getElementById('detail-included').innerHTML =
+      service.included.map(function(i){ return '<li>' + i + '</li>'; }).join('');
+    setActiveNav(key);
+    showPage('detail');
+  }
+
+  function route(){
+    var hash = location.hash.replace(/^#\//, '');
+    var parts = hash.split('/').filter(Boolean);
+    window.scrollTo(0, 0);
+
+    if(parts.length === 0 || parts[0] === 'home'){
+      setActiveNav('home');
+      showPage('home');
+      return;
+    }
+    if(parts[0] === 'contact'){
+      setActiveNav('contact');
+      showPage('contact');
+      return;
+    }
+    if(SITE[parts[0]] && parts.length === 1){
+      renderPillar(parts[0]);
+      return;
+    }
+    if(SITE[parts[0]] && parts.length === 2){
+      renderDetail(parts[0], parts[1]);
+      return;
+    }
+    setActiveNav('home');
+    showPage('home');
+  }
+
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script>
 
 </body>
 </html>
